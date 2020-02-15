@@ -5,7 +5,7 @@ target 'TopSwiftRepositories' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for TopSwiftRepositories
+  pod 'SDWebImage'
 
   target 'TopSwiftRepositoriesTests' do
     inherit! :search_paths
