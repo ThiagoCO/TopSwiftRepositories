@@ -6,6 +6,7 @@ target 'TopSwiftRepositories' do
   use_frameworks!
 
   pod 'SDWebImage'
+  pod 'PromiseKit'
 
   target 'TopSwiftRepositoriesTests' do
     inherit! :search_paths

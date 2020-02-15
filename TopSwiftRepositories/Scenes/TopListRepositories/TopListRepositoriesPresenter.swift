@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+protocol TopListRepositoriesPresentationLogic {
+}
+
+class TopListRepositoriesPresenter: TopListRepositoriesPresentationLogic {
+    
+    weak var viewController: TopListRepositoriesViewController?
+    
+    
+}
