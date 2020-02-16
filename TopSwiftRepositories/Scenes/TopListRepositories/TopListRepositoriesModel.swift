@@ -12,7 +12,7 @@ struct TopListRepositoriesModel {
     
     struct Response: Codable {
         
-        let repositories: [Repository]?
+        var repositories: [Repository]?
         
         enum CodingKeys: String, CodingKey {
             case repositories = "items"
@@ -29,6 +29,20 @@ struct TopListRepositoriesModel {
     struct Owner: Codable {
         var login: String
         var avatarUrl: String
+    }
+    
+    struct RepositoryCellViewModel {
+        var name: String
+        var stargazersCount: Int
+        var login: String
+        var avatarUrl: String
+        
+        init(repository: Repository) {
+            self.name = repository.name
+            self.stargazersCount = repository.stargazersCount
+            self.login = repository.owner.login
+            self.avatarUrl = repository.owner.avatarUrl
+        }
     }
 }
 

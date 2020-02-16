@@ -9,7 +9,9 @@
 import Foundation
 
 protocol ListRepositoriesBusinessLogic {
-    
+    func requestRepositories()
+    func fetchMore(index: Int)
+    func refreshRequestRepositories()
 }
 
 protocol ListRepositoriesDataStore {
@@ -20,11 +22,55 @@ class TopListRepositoriesInteractor: ListRepositoriesDataStore {
     var presenter: TopListRepositoriesPresentationLogic?
     var worker: TopListRepositoriesNetworkLogic
     var repositoryList: TopListRepositoriesModel.Response?
+    var nextPage = 1
     
     init(worker: TopListRepositoriesNetworkLogic = TopListRepositoriesWorker()) {
         self.worker = worker
     }
     
+    func requestRepositories() {
+        displayLoading()
+        worker.searchRepositories(page: nextPage)
+            .done(handleSuccess)
+            .catch(handleError)
+            .finally { self.removeLoading() }
+    }
+    
+    private func handleSuccess(response: TopListRepositoriesModel.Response) {
+        if nextPage == 1 {
+            repositoryList = response
+        } else {
+            guard let newRepositories = response.repositories else { return }
+            repositoryList?.repositories?.append(contentsOf: newRepositories)
+        }
+        nextPage = nextPage + 1
+        presenter?.presentListRepositories(repositories: repositoryList?.repositories)
+    }
+    
+    func refreshRequestRepositories() {
+        nextPage = 1
+        requestRepositories()
+    }
+    
+    private func handleError(error: Error) {
+        presenter?.presentError(title: String.titleAlertError, subtitle: String.subTitleAlertError)
+    }
+    
+    private func displayLoading() {
+        nextPage == 1 ? presenter?.presentScreenLoading() : presenter?.presentPaginationLoading()
+    }
+    
+    private func removeLoading() {
+        presenter?.hidePaginationLoading()
+        presenter?.hideScreenLoading()
+    }
+    
+    func fetchMore(index: Int) {
+        guard let repositoriesCount = repositoryList?.repositories?.count else { return }
+        if index == repositoriesCount - 1 {
+             requestRepositories()
+         }
+     }
     
 }
 

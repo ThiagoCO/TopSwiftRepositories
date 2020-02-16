@@ -9,30 +9,100 @@
 import UIKit
 import PromiseKit
 
-class TopListRepositoriesViewController: BaseListRepositoriesViewController {
+protocol TopListRepositoriesDisplayLogic: class {
+    func displayScreenLoading()
+    func hideScreenLoading()
+    func displayPaginationLoading()
+    func hidePaginationLoading()
+    func displayRepositories(_ repositoriesCellsViewModel: [TopListRepositoriesModel.RepositoryCellViewModel])
+    func displayError(title: String, subtitle: String)
+}
 
-    var list: TopListRepositoriesModel.Response?
+class TopListRepositoriesViewController: BaseListRepositoriesViewController, BaseDisplayLogic {
+    
+    var interactor: ListRepositoriesBusinessLogic?
+    var repositoriesCellsViewModel: [TopListRepositoriesModel.RepositoryCellViewModel] = []
+    
+    private let customRefreshControl = UIRefreshControl()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView =  LoadingView(frame: CGRect(x: 0, y: 0, width: 100, height: 50)) 
-        TopListRepositoriesWorker().searchRepositories(page: 1).done { list in
-            self.list = list
-            self.tableView.reloadData()
-        }.catch { error in
-            print(error)
-        }
+        interactor?.requestRepositories()
     }
+    
+    override func loadView() {
+        super.loadView()
+        setup()
+        setupPullRefresh()
+    }
+    
+    private func setup() {
+        let viewController = self
+        let interactor = TopListRepositoriesInteractor()
+        let presenter = TopListRepositoriesPresenter()
+        viewController.interactor = interactor
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+    }
+    
+    func setupPullRefresh() {
+        refreshControl = customRefreshControl
+        refreshControl?.addTarget(self, action: #selector(pullToRefreshAction), for: .valueChanged)
+    }
+    
+    @objc
+    private func pullToRefreshAction() {
+        interactor?.refreshRequestRepositories()
+    }
+    
+}
 
+extension TopListRepositoriesViewController: TopListRepositoriesDisplayLogic {
+    
+    func displayRepositories(_ repositoriesCellsViewModel: [TopListRepositoriesModel.RepositoryCellViewModel]) {
+        self.repositoriesCellsViewModel = repositoriesCellsViewModel
+        refreshControl?.endRefreshing()
+        if repositoriesCellsViewModel.count <= 30 {
+            tableView.setContentOffset(CGPoint(x: 0, y: -200), animated:true)
+        }
+        tableView.reloadData()
+    }
+    
+    func displayScreenLoading() {
+        showScreenLoading()
+    }
+    
+    func hideScreenLoading() {
+        removeLoadingState()
+    }
+    
+    func displayPaginationLoading() {
+        tableView.tableFooterView =  LoadingView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+    }
+    
+    func hidePaginationLoading() {
+        tableView.tableFooterView = nil
+    }
+    
+    func displayError(title: String, subtitle: String) {
+        showError(title: title, message: subtitle)
+    }
+    
 }
 
 extension TopListRepositoriesViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list?.repositories?.count ?? 0
+        return repositoriesCellsViewModel.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = RepositoryCell()
-        cell.configure(repository: list!.repositories![indexPath.row])
+        cell.configure(viewModel: repositoriesCellsViewModel[indexPath.row])
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        interactor?.fetchMore(index: indexPath.row)
     }
 }

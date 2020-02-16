@@ -11,11 +11,14 @@ import UIKit
 class LoadingView: UIView {
     
     // MARK: - View lifecycle
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        accessibilityIdentifier = "LoadingView"
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setup()
+        accessibilityIdentifier = "LoadingView"
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Private methods

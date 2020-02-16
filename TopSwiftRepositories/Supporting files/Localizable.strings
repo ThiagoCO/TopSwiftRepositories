@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  TopSwiftRepositories
+
+  Created by Thiago Cavalcante de Oliveira on 16/02/20.
+  Copyright © 2020 Thiago Cavalcante De Oliveira. All rights reserved.
+*/
+
+"top_list_repositories_title" = "Top Repositories";
+"loading_title" = "Carregando ...";
+"title_alert_error" = "OPS !!!";
+"subtitle_alert_error" = "Tivemos um problema. \nTente novamente mais tarde";

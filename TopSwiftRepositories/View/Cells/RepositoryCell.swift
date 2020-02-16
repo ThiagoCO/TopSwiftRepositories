@@ -48,11 +48,11 @@ class RepositoryCell: UITableViewCell {
     
     // MARK: - Public methods
     
-    func configure(repository: TopListRepositoriesModel.Repository) {
-        repositoryNameLabel.text = repository.name
-        starsLabel.text = "\(repository.stargazersCount) stars"
-        authorNameLabel.text = repository.owner.login
-        if let avatarUrl = URL(string: repository.owner.avatarUrl) {
+    func configure(viewModel: TopListRepositoriesModel.RepositoryCellViewModel) {
+        repositoryNameLabel.text = viewModel.name
+        starsLabel.text = "\(viewModel.stargazersCount) stars"
+        authorNameLabel.text = viewModel.login
+        if let avatarUrl = URL(string: viewModel.avatarUrl) {
             authorImageView.sd_setImage(with: avatarUrl, placeholderImage: UIImage(named: "github_logo_placeholder"))
         }
     }

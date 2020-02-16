@@ -24,7 +24,7 @@ class BaseListRepositoriesViewController: UITableViewController {
     }
     
     func setupNavigationBar() {
-        title = "Top Repositories"
+        title = String.topListRepositoriesTitle
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -36,9 +36,7 @@ extension BaseListRepositoriesViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = RepositoryCell()
-        cell.configure(repository: TopListRepositoriesModel.Repository(name: "Thiago Cavalcante", stargazersCount: 10, owner: TopListRepositoriesModel.Owner(login: "thiago.cavalcante15@hotmail.com", avatarUrl: "https://avatars2.githubusercontent.com/u/484656?v=4")))
         return cell
     }
     
