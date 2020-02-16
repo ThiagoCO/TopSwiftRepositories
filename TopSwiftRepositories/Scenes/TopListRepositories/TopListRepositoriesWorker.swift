@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import PromiseKit
+
+protocol TopListRepositoriesNetworkLogic {
+    func searchRepositories(page: Int) -> Promise<TopListRepositoriesModel.Response>
+}
+
+class TopListRepositoriesWorker: TopListRepositoriesNetworkLogic {
+
+    let networkProvider = NetworkProvider.shared
+    
+    func searchRepositories(page: Int) -> Promise<TopListRepositoriesModel.Response> {
+        let requestProvider: TopRepositoriesProvider =  TopRepositoriesProvider(page: page)
+        return networkProvider.request(requestProvider, parseAs: TopListRepositoriesModel.Response.self)
+    }
+    
+}

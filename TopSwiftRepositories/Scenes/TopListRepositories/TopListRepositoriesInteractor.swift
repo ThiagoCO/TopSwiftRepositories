@@ -7,3 +7,28 @@
 //
 
 import Foundation
+
+protocol ListRepositoriesBusinessLogic {
+    
+}
+
+protocol ListRepositoriesDataStore {
+    
+}
+
+class TopListRepositoriesInteractor: ListRepositoriesDataStore {
+    var presenter: TopListRepositoriesPresentationLogic?
+    var worker: TopListRepositoriesNetworkLogic
+    var repositoryList: TopListRepositoriesModel.Response?
+    
+    init(worker: TopListRepositoriesNetworkLogic = TopListRepositoriesWorker()) {
+        self.worker = worker
+    }
+    
+    
+}
+
+extension TopListRepositoriesInteractor: ListRepositoriesBusinessLogic {
+    
+
+}

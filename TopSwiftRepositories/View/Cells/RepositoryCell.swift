@@ -48,7 +48,7 @@ class RepositoryCell: UITableViewCell {
     
     // MARK: - Public methods
     
-    func configure(repository: Repository) {
+    func configure(repository: TopListRepositoriesModel.Repository) {
         repositoryNameLabel.text = repository.name
         starsLabel.text = "\(repository.stargazersCount) stars"
         authorNameLabel.text = repository.owner.login

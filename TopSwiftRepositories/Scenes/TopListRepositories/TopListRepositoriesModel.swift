@@ -8,15 +8,28 @@
 
 import Foundation
 
-struct Repository: Codable {
-    var name: String
-    var stargazersCount: Int
-    var owner: Owner
-}
-
-struct Owner: Codable {
-    var login: String
-    var avatarUrl: String
+struct TopListRepositoriesModel {
+    
+    struct Response: Codable {
+        
+        let repositories: [Repository]?
+        
+        enum CodingKeys: String, CodingKey {
+            case repositories = "items"
+        }
+        
+    }
+    
+    struct Repository: Codable {
+        var name: String
+        var stargazersCount: Int
+        var owner: Owner
+    }
+    
+    struct Owner: Codable {
+        var login: String
+        var avatarUrl: String
+    }
 }
 
 

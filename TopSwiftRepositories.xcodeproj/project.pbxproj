@@ -14,9 +14,11 @@
 		2D763D4D23F8659A00FA2E6B /* TopListRepositoriesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D4C23F8659A00FA2E6B /* TopListRepositoriesWorker.swift */; };
 		2D763D4F23F865D300FA2E6B /* TopListRepositoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D4E23F865D300FA2E6B /* TopListRepositoriesPresenter.swift */; };
 		2D763D5323F8667500FA2E6B /* TopListRepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D5223F8667500FA2E6B /* TopListRepositoriesViewController.swift */; };
-		2D763D5623F8691900FA2E6B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D5523F8691900FA2E6B /* Endpoint.swift */; };
 		2D763D5823F86B1B00FA2E6B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D5723F86B1B00FA2E6B /* NetworkError.swift */; };
 		2D763D5A23F86B3500FA2E6B /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D5923F86B3500FA2E6B /* NetworkProvider.swift */; };
+		2D763D5D23F871EC00FA2E6B /* LoadingDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D5C23F871EC00FA2E6B /* LoadingDefaultView.swift */; };
+		2D763D5F23F89BEA00FA2E6B /* RequestProviderProcotol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D5E23F89BEA00FA2E6B /* RequestProviderProcotol.swift */; };
+		2D763D6223F89D6C00FA2E6B /* TopRepositoriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D6123F89D6C00FA2E6B /* TopRepositoriesProvider.swift */; };
 		3DD0BBDB4BAB5433F8449A67 /* Pods_TopSwiftRepositoriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B13945A0748038B473BC18 /* Pods_TopSwiftRepositoriesTests.framework */; };
 		AB3547B923F74F2500DF894D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3547B823F74F2500DF894D /* AppDelegate.swift */; };
 		AB3547BB23F74F2500DF894D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3547BA23F74F2500DF894D /* SceneDelegate.swift */; };
@@ -47,9 +49,11 @@
 		2D763D4C23F8659A00FA2E6B /* TopListRepositoriesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoriesWorker.swift; sourceTree = "<group>"; };
 		2D763D4E23F865D300FA2E6B /* TopListRepositoriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoriesPresenter.swift; sourceTree = "<group>"; };
 		2D763D5223F8667500FA2E6B /* TopListRepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoriesViewController.swift; sourceTree = "<group>"; };
-		2D763D5523F8691900FA2E6B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		2D763D5723F86B1B00FA2E6B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		2D763D5923F86B3500FA2E6B /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		2D763D5C23F871EC00FA2E6B /* LoadingDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDefaultView.swift; sourceTree = "<group>"; };
+		2D763D5E23F89BEA00FA2E6B /* RequestProviderProcotol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProviderProcotol.swift; sourceTree = "<group>"; };
+		2D763D6123F89D6C00FA2E6B /* TopRepositoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRepositoriesProvider.swift; sourceTree = "<group>"; };
 		42DF0A329B291A81F3121EB2 /* Pods-TopSwiftRepositories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopSwiftRepositories.debug.xcconfig"; path = "Target Support Files/Pods-TopSwiftRepositories/Pods-TopSwiftRepositories.debug.xcconfig"; sourceTree = "<group>"; };
 		4595459C1FFF25ACCE54DBCA /* Pods-TopSwiftRepositoriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopSwiftRepositoriesTests.debug.xcconfig"; path = "Target Support Files/Pods-TopSwiftRepositoriesTests/Pods-TopSwiftRepositoriesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB3547B523F74F2500DF894D /* TopSwiftRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopSwiftRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +109,7 @@
 		2D763D4323F85A2300FA2E6B /* TopListRepositories */ = {
 			isa = PBXGroup;
 			children = (
+				2D763D6023F89D5300FA2E6B /* Provider */,
 				2D763D4423F85A3A00FA2E6B /* TopListRepositoriesModel.swift */,
 				2D763D4A23F8658100FA2E6B /* TopListRepositoriesInteractor.swift */,
 				2D763D4C23F8659A00FA2E6B /* TopListRepositoriesWorker.swift */,
@@ -117,11 +122,27 @@
 		2D763D5423F868AE00FA2E6B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				2D763D5523F8691900FA2E6B /* Endpoint.swift */,
 				2D763D5723F86B1B00FA2E6B /* NetworkError.swift */,
 				2D763D5923F86B3500FA2E6B /* NetworkProvider.swift */,
+				2D763D5E23F89BEA00FA2E6B /* RequestProviderProcotol.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		2D763D5B23F8718D00FA2E6B /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				2D763D5C23F871EC00FA2E6B /* LoadingDefaultView.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		2D763D6023F89D5300FA2E6B /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				2D763D6123F89D6C00FA2E6B /* TopRepositoriesProvider.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		AB3547AC23F74F2500DF894D = {
@@ -196,6 +217,7 @@
 		ABF7AD9D23F751A100C39091 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2D763D5B23F8718D00FA2E6B /* Loading */,
 				ABF7AD9E23F751B500C39091 /* Base */,
 				ABF7ADA123F7522800C39091 /* List */,
 			);
@@ -406,17 +428,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D763D4123F8526000FA2E6B /* RepositoryCell.swift in Sources */,
+				2D763D5F23F89BEA00FA2E6B /* RequestProviderProcotol.swift in Sources */,
 				2D763D5A23F86B3500FA2E6B /* NetworkProvider.swift in Sources */,
 				2D763D4D23F8659A00FA2E6B /* TopListRepositoriesWorker.swift in Sources */,
 				ABF7ADA323F752AD00C39091 /* BaseListRepositoriesViewController.swift in Sources */,
 				AB3547B923F74F2500DF894D /* AppDelegate.swift in Sources */,
 				2D763D4F23F865D300FA2E6B /* TopListRepositoriesPresenter.swift in Sources */,
 				AB3547BB23F74F2500DF894D /* SceneDelegate.swift in Sources */,
+				2D763D5D23F871EC00FA2E6B /* LoadingDefaultView.swift in Sources */,
 				ABF7ADA023F7520600C39091 /* BaseNavigationController.swift in Sources */,
 				2D763D4B23F8658100FA2E6B /* TopListRepositoriesInteractor.swift in Sources */,
 				2D763D5323F8667500FA2E6B /* TopListRepositoriesViewController.swift in Sources */,
 				2D763D5823F86B1B00FA2E6B /* NetworkError.swift in Sources */,
-				2D763D5623F8691900FA2E6B /* Endpoint.swift in Sources */,
+				2D763D6223F89D6C00FA2E6B /* TopRepositoriesProvider.swift in Sources */,
 				2D763D4523F85A3A00FA2E6B /* TopListRepositoriesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
