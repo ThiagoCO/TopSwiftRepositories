@@ -62,9 +62,6 @@ extension TopListRepositoriesViewController: TopListRepositoriesDisplayLogic {
     func displayRepositories(_ repositoriesCellsViewModel: [TopListRepositoriesModel.RepositoryCellViewModel]) {
         self.repositoriesCellsViewModel = repositoriesCellsViewModel
         refreshControl?.endRefreshing()
-        if repositoriesCellsViewModel.count <= 30 {
-            tableView.setContentOffset(CGPoint(x: 0, y: -200), animated:true)
-        }
         tableView.reloadData()
     }
     

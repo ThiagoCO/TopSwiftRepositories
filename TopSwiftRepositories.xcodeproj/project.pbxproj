@@ -31,7 +31,13 @@
 		AB3547BB23F74F2500DF894D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3547BA23F74F2500DF894D /* SceneDelegate.swift */; };
 		AB3547C223F74F2600DF894D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3547C123F74F2600DF894D /* Assets.xcassets */; };
 		AB3547C523F74F2600DF894D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3547C323F74F2600DF894D /* LaunchScreen.storyboard */; };
-		AB3547D023F74F2600DF894D /* TopSwiftRepositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3547CF23F74F2600DF894D /* TopSwiftRepositoriesTests.swift */; };
+		ABC2B8EA23FAE29F004DDFD6 /* TopListRepositoriesPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2B8E923FAE29E004DDFD6 /* TopListRepositoriesPresenterMock.swift */; };
+		ABC2B8EE23FAE499004DDFD6 /* repositories-stars-page-2.json in Resources */ = {isa = PBXBuildFile; fileRef = ABC2B8EC23FAE499004DDFD6 /* repositories-stars-page-2.json */; };
+		ABC2B8EF23FAE499004DDFD6 /* repositories-stars-page-1.json in Resources */ = {isa = PBXBuildFile; fileRef = ABC2B8ED23FAE499004DDFD6 /* repositories-stars-page-1.json */; };
+		ABC2B8F223FAE4DF004DDFD6 /* JSONReaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2B8F123FAE4DF004DDFD6 /* JSONReaderHelper.swift */; };
+		ABC2B8F423FAE556004DDFD6 /* TopListRepositoriesWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2B8F323FAE556004DDFD6 /* TopListRepositoriesWorkerMock.swift */; };
+		ABC2B8F723FAEFE2004DDFD6 /* TopListRepositoriesInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2B8F623FAEFE2004DDFD6 /* TopListRepositoriesInteractorTest.swift */; };
+		ABC2B8F823FAFBF8004DDFD6 /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D6623F8EA6800FA2E6B /* Data+Utils.swift */; };
 		ABF7ADA023F7520600C39091 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7AD9F23F7520600C39091 /* BaseNavigationController.swift */; };
 		ABF7ADA323F752AD00C39091 /* BaseListRepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7ADA223F752AD00C39091 /* BaseListRepositoriesViewController.swift */; };
 /* End PBXBuildFile section */
@@ -77,8 +83,13 @@
 		AB3547C423F74F2600DF894D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB3547C623F74F2600DF894D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB3547CB23F74F2600DF894D /* TopSwiftRepositoriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopSwiftRepositoriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB3547CF23F74F2600DF894D /* TopSwiftRepositoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSwiftRepositoriesTests.swift; sourceTree = "<group>"; };
 		AB3547D123F74F2600DF894D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABC2B8E923FAE29E004DDFD6 /* TopListRepositoriesPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoriesPresenterMock.swift; sourceTree = "<group>"; };
+		ABC2B8EC23FAE499004DDFD6 /* repositories-stars-page-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "repositories-stars-page-2.json"; sourceTree = "<group>"; };
+		ABC2B8ED23FAE499004DDFD6 /* repositories-stars-page-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "repositories-stars-page-1.json"; sourceTree = "<group>"; };
+		ABC2B8F123FAE4DF004DDFD6 /* JSONReaderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReaderHelper.swift; sourceTree = "<group>"; };
+		ABC2B8F323FAE556004DDFD6 /* TopListRepositoriesWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoriesWorkerMock.swift; sourceTree = "<group>"; };
+		ABC2B8F623FAEFE2004DDFD6 /* TopListRepositoriesInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoriesInteractorTest.swift; sourceTree = "<group>"; };
 		ABF7AD9F23F7520600C39091 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		ABF7ADA223F752AD00C39091 /* BaseListRepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListRepositoriesViewController.swift; sourceTree = "<group>"; };
 		D8B13945A0748038B473BC18 /* Pods_TopSwiftRepositoriesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopSwiftRepositoriesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,12 +220,12 @@
 		AB3547B723F74F2500DF894D /* TopSwiftRepositories */ = {
 			isa = PBXGroup;
 			children = (
+				AB3547DB23F750A700DF894D /* Application */,
 				2D763D5423F868AE00FA2E6B /* Networking */,
 				2D763D4223F85A0800FA2E6B /* Scenes */,
-				AB3547DA23F7506200DF894D /* Supporting files */,
-				AB3547DB23F750A700DF894D /* Application */,
 				ABF7AD9C23F7517F00C39091 /* View */,
 				2D763D6523F8EA3E00FA2E6B /* Extensions */,
+				AB3547DA23F7506200DF894D /* Supporting files */,
 			);
 			path = TopSwiftRepositories;
 			sourceTree = "<group>";
@@ -222,8 +233,8 @@
 		AB3547CE23F74F2600DF894D /* TopSwiftRepositoriesTests */ = {
 			isa = PBXGroup;
 			children = (
+				ABC2B8E523FAE20D004DDFD6 /* UnitTests */,
 				2D1B1A7923F9E7A600088DC2 /* SnapshotTests */,
-				AB3547CF23F74F2600DF894D /* TopSwiftRepositoriesTests.swift */,
 				AB3547D123F74F2600DF894D /* Info.plist */,
 			);
 			path = TopSwiftRepositoriesTests;
@@ -247,6 +258,59 @@
 				AB3547BA23F74F2500DF894D /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		ABC2B8E523FAE20D004DDFD6 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABC2B8EB23FAE484004DDFD6 /* Resources */,
+				ABC2B8E623FAE24A004DDFD6 /* Mocks */,
+				ABC2B8F023FAE4A8004DDFD6 /* Helper */,
+				ABC2B8E823FAE27A004DDFD6 /* Scenes */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		ABC2B8E623FAE24A004DDFD6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				ABC2B8E923FAE29E004DDFD6 /* TopListRepositoriesPresenterMock.swift */,
+				ABC2B8F323FAE556004DDFD6 /* TopListRepositoriesWorkerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		ABC2B8E823FAE27A004DDFD6 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ABC2B8F523FAEFA2004DDFD6 /* TopListRepositories */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		ABC2B8EB23FAE484004DDFD6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ABC2B8ED23FAE499004DDFD6 /* repositories-stars-page-1.json */,
+				ABC2B8EC23FAE499004DDFD6 /* repositories-stars-page-2.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ABC2B8F023FAE4A8004DDFD6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				ABC2B8F123FAE4DF004DDFD6 /* JSONReaderHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		ABC2B8F523FAEFA2004DDFD6 /* TopListRepositories */ = {
+			isa = PBXGroup;
+			children = (
+				ABC2B8F623FAEFE2004DDFD6 /* TopListRepositoriesInteractorTest.swift */,
+			);
+			path = TopListRepositories;
 			sourceTree = "<group>";
 		};
 		ABF7AD9C23F7517F00C39091 /* View */ = {
@@ -400,6 +464,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC2B8EF23FAE499004DDFD6 /* repositories-stars-page-1.json in Resources */,
+				ABC2B8EE23FAE499004DDFD6 /* repositories-stars-page-2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,8 +584,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D1B1A7B23F9E7CD00088DC2 /* TopListRepositoriesViewControllerTest.swift in Sources */,
-				AB3547D023F74F2600DF894D /* TopSwiftRepositoriesTests.swift in Sources */,
+				ABC2B8F423FAE556004DDFD6 /* TopListRepositoriesWorkerMock.swift in Sources */,
 				2D1B1A7E23F9EE6100088DC2 /* Constants.swift in Sources */,
+				ABC2B8F823FAFBF8004DDFD6 /* Data+Utils.swift in Sources */,
+				ABC2B8F223FAE4DF004DDFD6 /* JSONReaderHelper.swift in Sources */,
+				ABC2B8F723FAEFE2004DDFD6 /* TopListRepositoriesInteractorTest.swift in Sources */,
+				ABC2B8EA23FAE29F004DDFD6 /* TopListRepositoriesPresenterMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

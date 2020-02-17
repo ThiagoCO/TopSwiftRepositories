@@ -9,7 +9,7 @@
 import UIKit
 
 class BaseNavigationController: UINavigationController {
-
+    
     public override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
     }
@@ -17,6 +17,14 @@ class BaseNavigationController: UINavigationController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let navigationBarAppearence = UINavigationBarAppearance()
+        navigationBarAppearence.shadowColor = .clear
+        navigationBar.scrollEdgeAppearance = navigationBarAppearence
+        navigationBar.isTranslucent = true
+        navigationItem.largeTitleDisplayMode = .automatic
+    }
 }
 

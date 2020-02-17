@@ -14,6 +14,7 @@ class BaseListRepositoriesViewController: UITableViewController, BaseDisplayLogi
         super.viewDidLoad()
         setupTableView()
         setupNavigationBar()
+        showScreenLoading()
     }
     
     func setupTableView() {
@@ -25,7 +26,6 @@ class BaseListRepositoriesViewController: UITableViewController, BaseDisplayLogi
     
     func setupNavigationBar() {
         title = String.topListRepositoriesTitle
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
         
 }
