@@ -8,8 +8,8 @@
 
 import UIKit
 
-class BaseListRepositoriesViewController: UITableViewController {
-    
+class BaseListRepositoriesViewController: UITableViewController, BaseDisplayLogic {
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -27,7 +27,7 @@ class BaseListRepositoriesViewController: UITableViewController {
         title = String.topListRepositoriesTitle
         navigationController?.navigationBar.prefersLargeTitles = true
     }
-    
+        
 }
 
 extension BaseListRepositoriesViewController {
@@ -37,6 +37,7 @@ extension BaseListRepositoriesViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = RepositoryCell()
+        cell.configure(viewModel: TopListRepositoriesModel.RepositoryCellViewModel(repository: TopListRepositoriesModel.Repository(name: "TopSwiftRepositories", stargazersCount: 1000, owner: TopListRepositoriesModel.Owner(login: "thiagoCO", avatarUrl: ""))))
         return cell
     }
     

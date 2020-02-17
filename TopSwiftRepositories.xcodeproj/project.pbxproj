@@ -10,6 +10,8 @@
 		264D448CE9889E8318DFDE81 /* Pods_TopSwiftRepositories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2332BCACCBB6573DDB951031 /* Pods_TopSwiftRepositories.framework */; };
 		2D1B1A7323F9DED600088DC2 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B1A7223F9DED600088DC2 /* String+Localizable.swift */; };
 		2D1B1A7823F9E1E800088DC2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D1B1A7723F9E1E800088DC2 /* Localizable.strings */; };
+		2D1B1A7B23F9E7CD00088DC2 /* TopListRepositoriesViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B1A7A23F9E7CD00088DC2 /* TopListRepositoriesViewControllerTest.swift */; };
+		2D1B1A7E23F9EE6100088DC2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1B1A7D23F9EE6100088DC2 /* Constants.swift */; };
 		2D763D4123F8526000FA2E6B /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D4023F8526000FA2E6B /* RepositoryCell.swift */; };
 		2D763D4523F85A3A00FA2E6B /* TopListRepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D4423F85A3A00FA2E6B /* TopListRepositoriesModel.swift */; };
 		2D763D4B23F8658100FA2E6B /* TopListRepositoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D4A23F8658100FA2E6B /* TopListRepositoriesInteractor.swift */; };
@@ -50,6 +52,8 @@
 		23EDAA6D90981ADD6A8B6F7C /* Pods-TopSwiftRepositoriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopSwiftRepositoriesTests.release.xcconfig"; path = "Target Support Files/Pods-TopSwiftRepositoriesTests/Pods-TopSwiftRepositoriesTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D1B1A7223F9DED600088DC2 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
 		2D1B1A7723F9E1E800088DC2 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		2D1B1A7A23F9E7CD00088DC2 /* TopListRepositoriesViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoriesViewControllerTest.swift; sourceTree = "<group>"; };
+		2D1B1A7D23F9EE6100088DC2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2D763D4023F8526000FA2E6B /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		2D763D4423F85A3A00FA2E6B /* TopListRepositoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoriesModel.swift; sourceTree = "<group>"; };
 		2D763D4A23F8658100FA2E6B /* TopListRepositoriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoriesInteractor.swift; sourceTree = "<group>"; };
@@ -100,6 +104,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D1B1A7923F9E7A600088DC2 /* SnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				2D1B1A7C23F9EE3000088DC2 /* Mocks */,
+				2D1B1A7A23F9E7CD00088DC2 /* TopListRepositoriesViewControllerTest.swift */,
+			);
+			path = SnapshotTests;
+			sourceTree = "<group>";
+		};
+		2D1B1A7C23F9EE3000088DC2 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				2D1B1A7D23F9EE6100088DC2 /* Constants.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		2D763D3F23F8523800FA2E6B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +222,7 @@
 		AB3547CE23F74F2600DF894D /* TopSwiftRepositoriesTests */ = {
 			isa = PBXGroup;
 			children = (
+				2D1B1A7923F9E7A600088DC2 /* SnapshotTests */,
 				AB3547CF23F74F2600DF894D /* TopSwiftRepositoriesTests.swift */,
 				AB3547D123F74F2600DF894D /* Info.plist */,
 			);
@@ -313,6 +335,7 @@
 				AB3547C723F74F2600DF894D /* Sources */,
 				AB3547C823F74F2600DF894D /* Frameworks */,
 				AB3547C923F74F2600DF894D /* Resources */,
+				A8CE318EC4FB58ED5A76C10A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -444,6 +467,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A8CE318EC4FB58ED5A76C10A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TopSwiftRepositoriesTests/Pods-TopSwiftRepositoriesTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TopSwiftRepositoriesTests/Pods-TopSwiftRepositoriesTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TopSwiftRepositoriesTests/Pods-TopSwiftRepositoriesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -477,7 +517,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D1B1A7B23F9E7CD00088DC2 /* TopListRepositoriesViewControllerTest.swift in Sources */,
 				AB3547D023F74F2600DF894D /* TopSwiftRepositoriesTests.swift in Sources */,
+				2D1B1A7E23F9EE6100088DC2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,6 @@ import UIKit
 protocol BaseDisplayLogic {
     func showError(title: String?, message: String?)
     func showScreenLoading()
-    func hideScreenLoading()
 }
 
 extension BaseDisplayLogic where Self: UIViewController {

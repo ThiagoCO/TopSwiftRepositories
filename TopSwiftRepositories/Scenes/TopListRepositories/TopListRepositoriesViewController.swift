@@ -18,7 +18,7 @@ protocol TopListRepositoriesDisplayLogic: class {
     func displayError(title: String, subtitle: String)
 }
 
-class TopListRepositoriesViewController: BaseListRepositoriesViewController, BaseDisplayLogic {
+class TopListRepositoriesViewController: BaseListRepositoriesViewController {
     
     var interactor: ListRepositoriesBusinessLogic?
     var repositoriesCellsViewModel: [TopListRepositoriesModel.RepositoryCellViewModel] = []
