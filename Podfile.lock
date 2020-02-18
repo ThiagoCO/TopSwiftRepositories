@@ -4,12 +4,25 @@ PODS:
   - iOSSnapshotTestCase/Core (6.2.0)
   - iOSSnapshotTestCase/SwiftSupport (6.2.0):
     - iOSSnapshotTestCase/Core
+  - KIF (3.7.8):
+    - KIF/Core (= 3.7.8)
+  - KIF/Core (3.7.8)
+  - KIF/IdentifierTests (3.7.8):
+    - KIF/Core
   - Nimble (8.0.4)
-  - Nimble-Snapshots (8.0.0):
-    - Nimble-Snapshots/Core (= 8.0.0)
-  - Nimble-Snapshots/Core (8.0.0):
-    - iOSSnapshotTestCase (~> 6.0)
-    - Nimble (~> 8.0)
+  - OHHTTPStubs/Core (9.0.0)
+  - OHHTTPStubs/Default (9.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (9.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (9.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (9.0.0)
+  - OHHTTPStubs/Swift (9.0.0):
+    - OHHTTPStubs/Default
   - PromiseKit (6.13.1):
     - PromiseKit/CorePromise (= 6.13.1)
     - PromiseKit/Foundation (= 6.13.1)
@@ -25,8 +38,11 @@ PODS:
   - SDWebImage/Core (5.5.2)
 
 DEPENDENCIES:
+  - iOSSnapshotTestCase
+  - KIF
+  - KIF/IdentifierTests
   - Nimble (= 8.0.4)
-  - Nimble-Snapshots (= 8.0.0)
+  - OHHTTPStubs/Swift
   - PromiseKit
   - Quick (= 2.2.0)
   - SDWebImage
@@ -34,20 +50,22 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - iOSSnapshotTestCase
+    - KIF
     - Nimble
-    - Nimble-Snapshots
+    - OHHTTPStubs
     - PromiseKit
     - Quick
     - SDWebImage
 
 SPEC CHECKSUMS:
   iOSSnapshotTestCase: 9ab44cb5aa62b84d31847f40680112e15ec579a6
+  KIF: 52e1af1a78cf6fe4ec6777b14776f3dd2eccc32e
   Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
-  Nimble-Snapshots: 8ec63f41ce6c7229a17be9a64edbc123b181f75b
+  OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
 
-PODFILE CHECKSUM: ea2cde288a4a52e5837c11c8aca5b16e31f39013
+PODFILE CHECKSUM: 02dd5eb3edab6a9deb9bcc497c1e406ce06bde94
 
 COCOAPODS: 1.8.4

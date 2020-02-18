@@ -8,8 +8,6 @@
 
 import Foundation
 
-@testable import TopSwiftRepositories
-
 class JSONReaderHelper {
     
     func read<T: Decodable>(filename: String) -> T? {

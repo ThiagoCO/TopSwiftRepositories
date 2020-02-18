@@ -4,7 +4,9 @@
 def testing_libs
   pod 'Nimble', '8.0.4'
   pod 'Quick', '2.2.0'
-  pod 'Nimble-Snapshots', '8.0.0'
+  pod 'iOSSnapshotTestCase'
+  pod 'KIF'
+  pod 'KIF/IdentifierTests'
 end
 
 target 'TopSwiftRepositories' do
@@ -13,6 +15,7 @@ target 'TopSwiftRepositories' do
 
   pod 'SDWebImage'
   pod 'PromiseKit'
+  pod 'OHHTTPStubs/Swift'
 
   target 'TopSwiftRepositoriesTests' do
     inherit! :search_paths
