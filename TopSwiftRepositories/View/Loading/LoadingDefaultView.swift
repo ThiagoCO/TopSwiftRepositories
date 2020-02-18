@@ -14,7 +14,7 @@ class LoadingView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
-        accessibilityIdentifier = "LoadingView"
+        accessibilityIdentifier = "loadingView"
     }
     
     required init?(coder: NSCoder) {

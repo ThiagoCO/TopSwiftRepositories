@@ -9,8 +9,7 @@
 import Foundation
 
 class TopRepositoriesProvider: RequestProviderProtocol {
-    var path: String 
-    
+    var path: String
     var queryItems: [URLQueryItem]
     
     init(page: Int) {

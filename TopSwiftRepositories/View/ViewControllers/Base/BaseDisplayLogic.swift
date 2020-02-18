@@ -29,7 +29,6 @@ extension BaseDisplayLogic where Self: UIViewController {
             let activityIndicator = LoadingView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
             activityIndicator.backgroundColor = .clear
             alert.view.addSubview(activityIndicator)
-            
             self?.present(alert, animated: true)
         }
     }

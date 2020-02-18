@@ -22,6 +22,7 @@ class BaseListRepositoriesViewController: UITableViewController, BaseDisplayLogi
         tableView.backgroundColor = .white
         tableView.showsVerticalScrollIndicator = false
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: "repositoryCell")
+        tableView.accessibilityIdentifier = "tableView"
     }
     
     func setupNavigationBar() {
