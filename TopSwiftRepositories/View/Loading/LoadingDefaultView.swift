@@ -14,7 +14,6 @@ class LoadingView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
-        accessibilityIdentifier = "loadingView"
     }
     
     required init?(coder: NSCoder) {
@@ -27,6 +26,7 @@ class LoadingView: UIView {
         backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.accessibilityIdentifier = "loadingView"
         activityIndicator.startAnimating()
         addSubview(activityIndicator)
         NSLayoutConstraint.activate([

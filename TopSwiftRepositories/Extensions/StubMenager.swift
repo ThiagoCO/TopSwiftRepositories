@@ -22,9 +22,15 @@ class StubManager {
         }
         
         stub(condition: isHost("api.github.com") && containsQueryParams(["page": "2"])) { request -> HTTPStubsResponse in
-                 
-                 let result: TopListRepositoriesModel.Response? = JSONReaderHelper().read(filename: "repositories-stars-page-2")
-                 return HTTPStubsResponse(data: result.toData() ?? Data(), statusCode: 200, headers: nil).responseTime(delay)
+            
+            let result: TopListRepositoriesModel.Response? = JSONReaderHelper().read(filename: "repositories-stars-page-2")
+            return HTTPStubsResponse(data: result.toData() ?? Data(), statusCode: 200, headers: nil).responseTime(delay)
+        }
+        
+        stub(condition: isHost("api.github.com") && containsQueryParams(["page": "3"])) { request -> HTTPStubsResponse in
+            
+            let result: TopListRepositoriesModel.Response? = JSONReaderHelper().read(filename: "repositories-stars-page-2")
+            return HTTPStubsResponse(data: result.toData() ?? Data(), statusCode: 400, headers: nil).responseTime(delay)
         }
     }
     

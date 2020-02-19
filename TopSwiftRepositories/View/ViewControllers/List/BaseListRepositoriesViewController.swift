@@ -9,7 +9,7 @@
 import UIKit
 
 class BaseListRepositoriesViewController: UITableViewController, BaseDisplayLogic {
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()

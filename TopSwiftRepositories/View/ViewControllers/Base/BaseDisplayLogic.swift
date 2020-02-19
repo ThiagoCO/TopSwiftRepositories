@@ -19,6 +19,7 @@ extension BaseDisplayLogic where Self: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { [weak self] in
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            alertController.view.accessibilityIdentifier = "errorView"
             self?.present(alertController, animated: true, completion: nil)
         }
     }

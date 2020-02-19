@@ -24,7 +24,7 @@ class TopListRepositoriesViewController: BaseListRepositoriesViewController {
     var repositoriesCellsViewModel: [TopListRepositoriesModel.RepositoryCellViewModel] = []
     
     private let customRefreshControl = UIRefreshControl()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.requestRepositories()
@@ -66,10 +66,12 @@ extension TopListRepositoriesViewController: TopListRepositoriesDisplayLogic {
     }
     
     func displayScreenLoading() {
+        tableView.alpha = 0
         showScreenLoading()
     }
     
     func hideScreenLoading() {
+        tableView.alpha = 1
         removeLoadingState()
     }
     

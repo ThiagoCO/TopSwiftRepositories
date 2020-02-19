@@ -25,6 +25,7 @@ class BaseNavigationController: UINavigationController {
         navigationBar.scrollEdgeAppearance = navigationBarAppearence
         navigationBar.isTranslucent = true
         navigationItem.largeTitleDisplayMode = .automatic
+        view.backgroundColor = .white
     }
 }
 

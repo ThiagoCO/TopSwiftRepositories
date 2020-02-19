@@ -29,6 +29,7 @@
 		2D763D6423F8E9DE00FA2E6B /* BaseDisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D6323F8E9DE00FA2E6B /* BaseDisplayLogic.swift */; };
 		2D763D6723F8EA6800FA2E6B /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D6623F8EA6800FA2E6B /* Data+Utils.swift */; };
 		2D763D6923F8EA8100FA2E6B /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D6823F8EA8100FA2E6B /* UIView+Utils.swift */; };
+		AB1897FF23FD903300DCE6A5 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1897FE23FD903300DCE6A5 /* UIImage+Utils.swift */; };
 		AB3547B923F74F2500DF894D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3547B823F74F2500DF894D /* AppDelegate.swift */; };
 		AB3547BB23F74F2500DF894D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3547BA23F74F2500DF894D /* SceneDelegate.swift */; };
 		AB3547C223F74F2600DF894D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3547C123F74F2600DF894D /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		2D763D6823F8EA8100FA2E6B /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		71A1745C081DF0AB43E2E37D /* Pods-TopSwiftRepositories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopSwiftRepositories.release.xcconfig"; path = "Target Support Files/Pods-TopSwiftRepositories/Pods-TopSwiftRepositories.release.xcconfig"; sourceTree = "<group>"; };
 		7A1E28EA3FDB091556CD79C6 /* Pods-TopSwiftRepositories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopSwiftRepositories.debug.xcconfig"; path = "Target Support Files/Pods-TopSwiftRepositories/Pods-TopSwiftRepositories.debug.xcconfig"; sourceTree = "<group>"; };
+		AB1897FE23FD903300DCE6A5 /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
 		AB3547B523F74F2500DF894D /* TopSwiftRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopSwiftRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3547B823F74F2500DF894D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB3547BA23F74F2500DF894D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				AB7DA64523FC458D00E0656E /* KIF+Swift.swift */,
+				AB1897FE23FD903300DCE6A5 /* UIImage+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				2D1B1A8123FB585F00088DC2 /* TopListRepositoriesViewControllerTest.swift in Sources */,
 				ABC2B8F423FAE556004DDFD6 /* TopListRepositoriesWorkerMock.swift in Sources */,
 				ABC2B8F823FAFBF8004DDFD6 /* Data+Utils.swift in Sources */,
+				AB1897FF23FD903300DCE6A5 /* UIImage+Utils.swift in Sources */,
 				ABC2B8F723FAEFE2004DDFD6 /* TopListRepositoriesInteractorTest.swift in Sources */,
 				ABC2B8EA23FAE29F004DDFD6 /* TopListRepositoriesPresenterMock.swift in Sources */,
 			);
