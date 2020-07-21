@@ -19,15 +19,15 @@ class TopListRepositoriesViewControllerTest: FBSnapshotTestCase {
     
     func testViewControllerFlow() {
         
+        let imageViewLoadingScreen = getCurrentImageScreen()
         guard let tableView = tester().waitForView(withAccessibilityIdentifier: "tableView") as? UITableView else {
             XCTFail("TableView not found")
             return
         }
         
         // validate layout first loading screen
-        tester().waitForView(withAccessibilityIdentifier: "loadingView")
-        let imageViewLoadingScreen = getCurrentImageScreen()
-        FBSnapshotVerifyView(imageViewLoadingScreen, identifier: "first_screen_loading")
+       
+        FBSnapshotVerifyView(imageViewLoadingScreen, identifier: "first_screen_loading", overallTolerance: 0.1)
         
         
         //validate layout repository cell
@@ -40,27 +40,15 @@ class TopListRepositoriesViewControllerTest: FBSnapshotTestCase {
         tester().waitForAnimationsToFinish()
         let imageViewFirstScreen = getCurrentImageScreen()
         
-        FBSnapshotVerifyView(imageViewFirstScreen, identifier: "first_screen")
-        
-        //validade pull refresh
-        tester().pullToRefreshView(withAccessibilityIdentifier: "tableView", pullDownDuration: .inAboutAHalfSecond)
-        tester().waitForAnimationsToFinish()
-        FBSnapshotVerifyView(getCurrentImageScreen(), identifier: "pull_to_refresh", overallTolerance: 0.001)
-        
-        //validade pull refresh
-        tester().pullToRefreshView(withAccessibilityIdentifier: "tableView", pullDownDuration: .inAboutAHalfSecond)
-        tester().waitForAnimationsToFinish()
-        FBSnapshotVerifyView(getCurrentImageScreen(), identifier: "pull_to_refresh", overallTolerance: 0.001)
+        FBSnapshotVerifyView(imageViewFirstScreen, identifier: "first_screen", overallTolerance: 0.1)
         
         
         //validate infinity scroll layout
         tableView.scrollToRow(at: IndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0), at: .bottom, animated: true)
         
-        tester().swipeView(withAccessibilityIdentifier: "tableView", in: .up)
         tester().waitForAnimationsToFinish()
-        tester().waitForView(withAccessibilityIdentifier: "loadingView")
-        tester().waitForAnimationsToFinish()
-        FBSnapshotVerifyView(getCurrentImageScreen(), identifier: "infinity_loading")
+        let imgFooter = getCurrentImageScreen()
+        FBSnapshotVerifyView(imgFooter, identifier: "infinity_loading",overallTolerance: 0.1)
     }
     
     func getCurrentImageScreen() -> UIImageView {
