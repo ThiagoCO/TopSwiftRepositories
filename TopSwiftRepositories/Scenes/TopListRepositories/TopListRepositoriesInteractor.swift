@@ -12,17 +12,19 @@ protocol ListRepositoriesBusinessLogic {
     func requestRepositories()
     func fetchMore(index: Int)
     func refreshRequestRepositories()
+    func didSelectRow(index: Int)
 }
 
 protocol ListRepositoriesDataStore {
-    
+    var selectedItem: TopListRepositoriesModel.Repository? { get set }
 }
 
-class TopListRepositoriesInteractor: ListRepositoriesDataStore {
+class TopListRepositoriesInteractor: ListRepositoriesDataStore, ListRepositoriesBusinessLogic {
     var presenter: TopListRepositoriesPresentationLogic?
     var worker: TopListRepositoriesNetworkLogic
     var repositoryList: TopListRepositoriesModel.Response?
     var nextPage = 1
+    var selectedItem: TopListRepositoriesModel.Repository?
     
     init(worker: TopListRepositoriesNetworkLogic = TopListRepositoriesWorker()) {
         self.worker = worker
@@ -68,13 +70,14 @@ class TopListRepositoriesInteractor: ListRepositoriesDataStore {
     func fetchMore(index: Int) {
         guard let repositoriesCount = repositoryList?.repositories?.count else { return }
         if index == repositoriesCount - 1 {
-             requestRepositories()
-         }
-     }
+            requestRepositories()
+        }
+    }
     
+    func didSelectRow(index: Int) {
+        guard let item = repositoryList?.repositories?[index] else { return }
+        selectedItem = item
+        presenter?.presentPullRequests()
+    }
 }
 
-extension TopListRepositoriesInteractor: ListRepositoriesBusinessLogic {
-    
-
-}

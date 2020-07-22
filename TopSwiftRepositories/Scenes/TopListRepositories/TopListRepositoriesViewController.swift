@@ -16,11 +16,14 @@ protocol TopListRepositoriesDisplayLogic: class {
     func hidePaginationLoading()
     func displayRepositories(_ repositoriesCellsViewModel: [TopListRepositoriesModel.RepositoryCellViewModel])
     func displayError(title: String, subtitle: String)
+    func displayPullRequests()
 }
 
 class TopListRepositoriesViewController: BaseListRepositoriesViewController {
     
     var interactor: ListRepositoriesBusinessLogic?
+    var router: (NSObjectProtocol & TopListRepositoriesRoutingLogic & TopListRepositoriesDataPassing)?
+
     var repositoriesCellsViewModel: [TopListRepositoriesModel.RepositoryCellViewModel] = []
     
     private let customRefreshControl = UIRefreshControl()
@@ -40,9 +43,13 @@ class TopListRepositoriesViewController: BaseListRepositoriesViewController {
         let viewController = self
         let interactor = TopListRepositoriesInteractor()
         let presenter = TopListRepositoriesPresenter()
+        let router = TopListRepositoriesRouter()
         viewController.interactor = interactor
+        viewController.router = router
         interactor.presenter = presenter
         presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
     }
     
     func setupPullRefresh() {
@@ -87,6 +94,9 @@ extension TopListRepositoriesViewController: TopListRepositoriesDisplayLogic {
         showError(title: title, message: subtitle)
     }
     
+    func displayPullRequests() {
+        router?.routeToPullRequestList()
+    }
 }
 
 extension TopListRepositoriesViewController {
@@ -103,5 +113,9 @@ extension TopListRepositoriesViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         interactor?.fetchMore(index: indexPath.row)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        interactor?.didSelectRow(index: indexPath.row)
     }
 }

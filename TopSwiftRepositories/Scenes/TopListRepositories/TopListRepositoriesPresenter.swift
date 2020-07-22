@@ -15,6 +15,7 @@ protocol TopListRepositoriesPresentationLogic {
     func presentPaginationLoading()
     func hidePaginationLoading()
     func presentError(title: String, subtitle: String)
+    func presentPullRequests()
 }
 
 class TopListRepositoriesPresenter: TopListRepositoriesPresentationLogic {
@@ -48,6 +49,10 @@ class TopListRepositoriesPresenter: TopListRepositoriesPresentationLogic {
     
     func presentError(title: String, subtitle: String) {
         viewController?.displayError(title: title, subtitle: subtitle)
+    }
+    
+    func presentPullRequests() {
+        viewController?.displayPullRequests()
     }
     
 }

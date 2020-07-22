@@ -15,7 +15,7 @@ class TopRepositoriesProvider: RequestProviderProtocol {
     init(page: Int) {
         path = "/search/repositories"
         queryItems = [
-               URLQueryItem(name: "q", value: "language:swift"),
+               URLQueryItem(name: "q", value: "language:java"),
                URLQueryItem(name: "sort", value: "stars"),
                URLQueryItem(name: "per_page", value: "30"),
                URLQueryItem(name: "page", value: "\(page)")

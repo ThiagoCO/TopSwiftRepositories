@@ -10,6 +10,8 @@ import Foundation
 @testable import TopSwiftRepositories
 
 class TopListRepositoriesPresenterMock: TopListRepositoriesPresentationLogic {
+  
+    
     
     var presentListRepositoriesCount = 0
     var presentScreenLoadingCount = 0
@@ -25,6 +27,10 @@ class TopListRepositoriesPresenterMock: TopListRepositoriesPresentationLogic {
     
     func presentScreenLoading() {
         presentScreenLoadingCount = presentScreenLoadingCount + 1
+    }
+    
+    func presentPullRequests() {
+          
     }
     
     func hideScreenLoading() {

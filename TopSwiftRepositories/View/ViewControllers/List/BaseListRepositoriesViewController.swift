@@ -28,7 +28,6 @@ class BaseListRepositoriesViewController: UITableViewController, BaseDisplayLogi
     func setupNavigationBar() {
         title = String.topListRepositoriesTitle
     }
-        
 }
 
 extension BaseListRepositoriesViewController {

@@ -37,6 +37,15 @@
 		ABC2B8F423FAE556004DDFD6 /* TopListRepositoriesWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2B8F323FAE556004DDFD6 /* TopListRepositoriesWorkerMock.swift */; };
 		ABC2B8F723FAEFE2004DDFD6 /* TopListRepositoriesInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2B8F623FAEFE2004DDFD6 /* TopListRepositoriesInteractorTest.swift */; };
 		ABC2B8F823FAFBF8004DDFD6 /* Data+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D763D6623F8EA6800FA2E6B /* Data+Utils.swift */; };
+		ABD2C68224C7A7A1008B5BAE /* ListPullRequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C67C24C7A7A1008B5BAE /* ListPullRequestPresenter.swift */; };
+		ABD2C68324C7A7A1008B5BAE /* ListPullRequestWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C67D24C7A7A1008B5BAE /* ListPullRequestWorker.swift */; };
+		ABD2C68424C7A7A1008B5BAE /* ListPullRequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C67E24C7A7A1008B5BAE /* ListPullRequestRouter.swift */; };
+		ABD2C68524C7A7A1008B5BAE /* ListPullRequestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C67F24C7A7A1008B5BAE /* ListPullRequestModels.swift */; };
+		ABD2C68624C7A7A1008B5BAE /* ListPullRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C68024C7A7A1008B5BAE /* ListPullRequestViewController.swift */; };
+		ABD2C68724C7A7A1008B5BAE /* ListPullRequestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C68124C7A7A1008B5BAE /* ListPullRequestInteractor.swift */; };
+		ABD2C68A24C7A96B008B5BAE /* PullRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C68924C7A96B008B5BAE /* PullRequestCell.swift */; };
+		ABD2C68D24C7B3D7008B5BAE /* ListPullRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C68C24C7B3D7008B5BAE /* ListPullRequestProvider.swift */; };
+		ABD2C68F24C7C2F8008B5BAE /* TopListRepositoriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C68E24C7C2F8008B5BAE /* TopListRepositoriesRouter.swift */; };
 		ABF7ADA023F7520600C39091 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7AD9F23F7520600C39091 /* BaseNavigationController.swift */; };
 		ABF7ADA323F752AD00C39091 /* BaseListRepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7ADA223F752AD00C39091 /* BaseListRepositoriesViewController.swift */; };
 		ABFCFE0A24C2710900129243 /* KIF+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFCFE0824C2710900129243 /* KIF+Swift.swift */; };
@@ -96,6 +105,15 @@
 		ABC2B8F123FAE4DF004DDFD6 /* JSONReaderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReaderHelper.swift; sourceTree = "<group>"; };
 		ABC2B8F323FAE556004DDFD6 /* TopListRepositoriesWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoriesWorkerMock.swift; sourceTree = "<group>"; };
 		ABC2B8F623FAEFE2004DDFD6 /* TopListRepositoriesInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoriesInteractorTest.swift; sourceTree = "<group>"; };
+		ABD2C67C24C7A7A1008B5BAE /* ListPullRequestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPullRequestPresenter.swift; sourceTree = "<group>"; };
+		ABD2C67D24C7A7A1008B5BAE /* ListPullRequestWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPullRequestWorker.swift; sourceTree = "<group>"; };
+		ABD2C67E24C7A7A1008B5BAE /* ListPullRequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPullRequestRouter.swift; sourceTree = "<group>"; };
+		ABD2C67F24C7A7A1008B5BAE /* ListPullRequestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPullRequestModels.swift; sourceTree = "<group>"; };
+		ABD2C68024C7A7A1008B5BAE /* ListPullRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPullRequestViewController.swift; sourceTree = "<group>"; };
+		ABD2C68124C7A7A1008B5BAE /* ListPullRequestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPullRequestInteractor.swift; sourceTree = "<group>"; };
+		ABD2C68924C7A96B008B5BAE /* PullRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestCell.swift; sourceTree = "<group>"; };
+		ABD2C68C24C7B3D7008B5BAE /* ListPullRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPullRequestProvider.swift; sourceTree = "<group>"; };
+		ABD2C68E24C7C2F8008B5BAE /* TopListRepositoriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoriesRouter.swift; sourceTree = "<group>"; };
 		ABF7AD9F23F7520600C39091 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		ABF7ADA223F752AD00C39091 /* BaseListRepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListRepositoriesViewController.swift; sourceTree = "<group>"; };
 		ABFCFE0824C2710900129243 /* KIF+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF+Swift.swift"; sourceTree = "<group>"; };
@@ -129,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				2D763D4023F8526000FA2E6B /* RepositoryCell.swift */,
+				ABD2C68924C7A96B008B5BAE /* PullRequestCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -137,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				2D763D4323F85A2300FA2E6B /* TopListRepositories */,
+				ABD2C67B24C7A701008B5BAE /* ListPullRequest */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -150,6 +170,7 @@
 				2D763D4C23F8659A00FA2E6B /* TopListRepositoriesWorker.swift */,
 				2D763D4E23F865D300FA2E6B /* TopListRepositoriesPresenter.swift */,
 				2D763D5223F8667500FA2E6B /* TopListRepositoriesViewController.swift */,
+				ABD2C68E24C7C2F8008B5BAE /* TopListRepositoriesRouter.swift */,
 			);
 			path = TopListRepositories;
 			sourceTree = "<group>";
@@ -326,6 +347,28 @@
 				ABFCFE0824C2710900129243 /* KIF+Swift.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ABD2C67B24C7A701008B5BAE /* ListPullRequest */ = {
+			isa = PBXGroup;
+			children = (
+				ABD2C68824C7A831008B5BAE /* Provider */,
+				ABD2C67C24C7A7A1008B5BAE /* ListPullRequestPresenter.swift */,
+				ABD2C67D24C7A7A1008B5BAE /* ListPullRequestWorker.swift */,
+				ABD2C67E24C7A7A1008B5BAE /* ListPullRequestRouter.swift */,
+				ABD2C67F24C7A7A1008B5BAE /* ListPullRequestModels.swift */,
+				ABD2C68024C7A7A1008B5BAE /* ListPullRequestViewController.swift */,
+				ABD2C68124C7A7A1008B5BAE /* ListPullRequestInteractor.swift */,
+			);
+			path = ListPullRequest;
+			sourceTree = "<group>";
+		};
+		ABD2C68824C7A831008B5BAE /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				ABD2C68C24C7B3D7008B5BAE /* ListPullRequestProvider.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		ABF7AD9C23F7517F00C39091 /* View */ = {
@@ -567,9 +610,12 @@
 				2D763D6423F8E9DE00FA2E6B /* BaseDisplayLogic.swift in Sources */,
 				2D763D4123F8526000FA2E6B /* RepositoryCell.swift in Sources */,
 				2D763D5F23F89BEA00FA2E6B /* RequestProviderProcotol.swift in Sources */,
+				ABD2C68A24C7A96B008B5BAE /* PullRequestCell.swift in Sources */,
+				ABD2C68F24C7C2F8008B5BAE /* TopListRepositoriesRouter.swift in Sources */,
 				ABFCFE1224C3A24F00129243 /* StubMenager.swift in Sources */,
 				2D1B1A7323F9DED600088DC2 /* String+Localizable.swift in Sources */,
 				2D763D5A23F86B3500FA2E6B /* NetworkProvider.swift in Sources */,
+				ABD2C68424C7A7A1008B5BAE /* ListPullRequestRouter.swift in Sources */,
 				2D763D4D23F8659A00FA2E6B /* TopListRepositoriesWorker.swift in Sources */,
 				ABF7ADA323F752AD00C39091 /* BaseListRepositoriesViewController.swift in Sources */,
 				AB3547B923F74F2500DF894D /* AppDelegate.swift in Sources */,
@@ -577,15 +623,21 @@
 				AB3547BB23F74F2500DF894D /* SceneDelegate.swift in Sources */,
 				2D1B1A8F23FB5F1000088DC2 /* Encodable+Utils.swift in Sources */,
 				2D763D5D23F871EC00FA2E6B /* LoadingDefaultView.swift in Sources */,
+				ABD2C68624C7A7A1008B5BAE /* ListPullRequestViewController.swift in Sources */,
 				ABF7ADA023F7520600C39091 /* BaseNavigationController.swift in Sources */,
 				2D763D4B23F8658100FA2E6B /* TopListRepositoriesInteractor.swift in Sources */,
 				2D763D5323F8667500FA2E6B /* TopListRepositoriesViewController.swift in Sources */,
+				ABD2C68D24C7B3D7008B5BAE /* ListPullRequestProvider.swift in Sources */,
 				2D763D5823F86B1B00FA2E6B /* NetworkError.swift in Sources */,
 				2D763D6223F89D6C00FA2E6B /* TopRepositoriesProvider.swift in Sources */,
+				ABD2C68324C7A7A1008B5BAE /* ListPullRequestWorker.swift in Sources */,
 				2D1B1A9123FB6BCD00088DC2 /* JSONReaderHelper.swift in Sources */,
 				2D763D4523F85A3A00FA2E6B /* TopListRepositoriesModel.swift in Sources */,
+				ABD2C68224C7A7A1008B5BAE /* ListPullRequestPresenter.swift in Sources */,
 				2D763D6923F8EA8100FA2E6B /* UIView+Utils.swift in Sources */,
+				ABD2C68524C7A7A1008B5BAE /* ListPullRequestModels.swift in Sources */,
 				2D763D6723F8EA6800FA2E6B /* Data+Utils.swift in Sources */,
+				ABD2C68724C7A7A1008B5BAE /* ListPullRequestInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

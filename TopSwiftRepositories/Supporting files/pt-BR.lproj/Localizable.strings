@@ -6,7 +6,7 @@
   Copyright © 2020 Thiago Cavalcante De Oliveira. All rights reserved.
 */
 
-"top_list_repositories_title" = "Top Repositories";
+"top_list_repositories_title" = "Top Java Repositorios";
 "loading_title" = "Carregando ...";
 "title_alert_error" = "OPS !!!";
 "subtitle_alert_error" = "Tivemos um problema. \nTente novamente mais tarde";
