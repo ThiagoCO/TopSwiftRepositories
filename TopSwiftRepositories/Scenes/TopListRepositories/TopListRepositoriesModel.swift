@@ -23,6 +23,8 @@ struct TopListRepositoriesModel {
     struct Repository: Codable {
         var name: String
         var stargazersCount: Int
+        let description: String
+        let forksCount: Int
         var owner: Owner
     }
     
@@ -36,12 +38,16 @@ struct TopListRepositoriesModel {
         var stargazersCount: Int
         var login: String
         var avatarUrl: String
+        var forksCount: Int
+        var description: String
         
         init(repository: Repository) {
             self.name = repository.name
             self.stargazersCount = repository.stargazersCount
             self.login = repository.owner.login
             self.avatarUrl = repository.owner.avatarUrl
+            self.forksCount = repository.forksCount
+            self.description = repository.description
         }
     }
 }

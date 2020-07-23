@@ -14,7 +14,6 @@ class TopListRepositoriesViewControllerTest: FBSnapshotTestCase {
     override func setUp() {
         super.setUp()
         //recordMode = true
-        
     }
     
     func testViewControllerFlow() {

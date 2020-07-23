@@ -46,6 +46,8 @@
 		ABD2C68A24C7A96B008B5BAE /* PullRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C68924C7A96B008B5BAE /* PullRequestCell.swift */; };
 		ABD2C68D24C7B3D7008B5BAE /* ListPullRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C68C24C7B3D7008B5BAE /* ListPullRequestProvider.swift */; };
 		ABD2C68F24C7C2F8008B5BAE /* TopListRepositoriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C68E24C7C2F8008B5BAE /* TopListRepositoriesRouter.swift */; };
+		ABD2C69424C90DAE008B5BAE /* ListPullRequestInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C69324C90DAE008B5BAE /* ListPullRequestInteractorTest.swift */; };
+		ABD2C69624C90E24008B5BAE /* ListPullRequestViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD2C69524C90E24008B5BAE /* ListPullRequestViewControllerTest.swift */; };
 		ABF7ADA023F7520600C39091 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7AD9F23F7520600C39091 /* BaseNavigationController.swift */; };
 		ABF7ADA323F752AD00C39091 /* BaseListRepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7ADA223F752AD00C39091 /* BaseListRepositoriesViewController.swift */; };
 		ABFCFE0A24C2710900129243 /* KIF+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFCFE0824C2710900129243 /* KIF+Swift.swift */; };
@@ -114,6 +116,8 @@
 		ABD2C68924C7A96B008B5BAE /* PullRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestCell.swift; sourceTree = "<group>"; };
 		ABD2C68C24C7B3D7008B5BAE /* ListPullRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPullRequestProvider.swift; sourceTree = "<group>"; };
 		ABD2C68E24C7C2F8008B5BAE /* TopListRepositoriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListRepositoriesRouter.swift; sourceTree = "<group>"; };
+		ABD2C69324C90DAE008B5BAE /* ListPullRequestInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPullRequestInteractorTest.swift; sourceTree = "<group>"; };
+		ABD2C69524C90E24008B5BAE /* ListPullRequestViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPullRequestViewControllerTest.swift; sourceTree = "<group>"; };
 		ABF7AD9F23F7520600C39091 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		ABF7ADA223F752AD00C39091 /* BaseListRepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListRepositoriesViewController.swift; sourceTree = "<group>"; };
 		ABFCFE0824C2710900129243 /* KIF+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KIF+Swift.swift"; sourceTree = "<group>"; };
@@ -309,6 +313,7 @@
 		ABC2B8E823FAE27A004DDFD6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				ABD2C69224C90D6E008B5BAE /* ListPullRequest */,
 				ABC2B8F523FAEFA2004DDFD6 /* TopListRepositories */,
 			);
 			path = Scenes;
@@ -369,6 +374,15 @@
 				ABD2C68C24C7B3D7008B5BAE /* ListPullRequestProvider.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		ABD2C69224C90D6E008B5BAE /* ListPullRequest */ = {
+			isa = PBXGroup;
+			children = (
+				ABD2C69324C90DAE008B5BAE /* ListPullRequestInteractorTest.swift */,
+				ABD2C69524C90E24008B5BAE /* ListPullRequestViewControllerTest.swift */,
+			);
+			path = ListPullRequest;
 			sourceTree = "<group>";
 		};
 		ABF7AD9C23F7517F00C39091 /* View */ = {
@@ -646,9 +660,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D1B1A8123FB585F00088DC2 /* TopListRepositoriesViewControllerTest.swift in Sources */,
+				ABD2C69624C90E24008B5BAE /* ListPullRequestViewControllerTest.swift in Sources */,
 				ABC2B8F423FAE556004DDFD6 /* TopListRepositoriesWorkerMock.swift in Sources */,
 				ABC2B8F823FAFBF8004DDFD6 /* Data+Utils.swift in Sources */,
 				ABFCFE0A24C2710900129243 /* KIF+Swift.swift in Sources */,
+				ABD2C69424C90DAE008B5BAE /* ListPullRequestInteractorTest.swift in Sources */,
 				ABFCFE0B24C2710900129243 /* UITableView.swift in Sources */,
 				AB1897FF23FD903300DCE6A5 /* UIImage+Utils.swift in Sources */,
 				ABC2B8F723FAEFE2004DDFD6 /* TopListRepositoriesInteractorTest.swift in Sources */,

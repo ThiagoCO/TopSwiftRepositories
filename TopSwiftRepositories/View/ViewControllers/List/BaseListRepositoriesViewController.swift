@@ -28,6 +28,7 @@ class BaseListRepositoriesViewController: UITableViewController, BaseDisplayLogi
     func setupNavigationBar() {
         title = String.topListRepositoriesTitle
     }
+
 }
 
 extension BaseListRepositoriesViewController {
@@ -37,12 +38,12 @@ extension BaseListRepositoriesViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = RepositoryCell()
-        cell.configure(viewModel: TopListRepositoriesModel.RepositoryCellViewModel(repository: TopListRepositoriesModel.Repository(name: "TopSwiftRepositories", stargazersCount: 1000, owner: TopListRepositoriesModel.Owner(login: "thiagoCO", avatarUrl: ""))))
+        cell.configure(viewModel: TopListRepositoriesModel.RepositoryCellViewModel(repository: TopListRepositoriesModel.Repository(name: "TopSwiftRepositories", stargazersCount: 1000, description: "TopSwiftRepositories", forksCount: 1000, owner: TopListRepositoriesModel.Owner(login: "thiagoCO", avatarUrl: ""))))
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 120
     }
 }
 

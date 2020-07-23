@@ -11,81 +11,201 @@ import SDWebImage
 
 class RepositoryCell: UITableViewCell {
     
-    // MARK: - Properties
-    
-    private lazy var authorImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
-    
-    private lazy var repositoryNameLabel: UILabel = {
-        return UILabel()
-    }()
-    
-    private lazy var starsLabel: UILabel = {
-        return UILabel()
-    }()
-    
-    private lazy var authorNameLabel: UILabel = {
-        return UILabel()
-    }()
     
     // MARK: - View lifecycle
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupCell()
+        setupViews()
+        setupConstraints()
+        setupConfigurations()
     }
+    
+    
+    
+    private lazy var repositoryPhotoImageView: UIImageView = {
+        let imageView = UIImageView()
+        
+        imageView.layer.masksToBounds = false
+        imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return imageView
+    }()
+    
+    private lazy var repositoryNameLabel: UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.textColor = UIColor.black
+        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    private lazy var repositoryOwnerLabel: UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont(name: "Avenir Next", size: 13)
+        label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    private lazy var repositoryStarsImage: UIImageView = {
+        let imageView = UIImageView()
+        
+        imageView.image = UIImage(named: "star")
+        imageView.tintColor = UIColor.black
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return imageView
+    }()
+    
+    private lazy var repositoryStarsAmountLabel: UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.textColor = UIColor.black
+        label.textAlignment = .right
+        label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    private lazy var repositoryForksImage: UIImageView = {
+        let imageView = UIImageView()
+        
+        imageView.image = UIImage(named: "fork")
+        imageView.tintColor = UIColor.black
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return imageView
+    }()
+    
+    private lazy var repositoryForksAmountLabel: UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.textColor = UIColor.black
+        label.textAlignment = .right
+        label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    private lazy var repositoryDescriptionLabel: UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.textColor = UIColor.black
+        label.textAlignment = .justified
+        label.numberOfLines = 0
+        label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        authorImageView.image = nil
+        repositoryPhotoImageView.image = nil
         repositoryNameLabel.text = ""
-        starsLabel.text = ""
-        authorNameLabel.text = ""
+        repositoryStarsAmountLabel.text = ""
+        repositoryOwnerLabel.text = ""
+        repositoryDescriptionLabel.text = ""
+        repositoryForksAmountLabel.text = ""
     }
-    
-    // MARK: - Public methods
     
     func configure(viewModel: TopListRepositoriesModel.RepositoryCellViewModel) {
         repositoryNameLabel.text = viewModel.name
-        starsLabel.text = "\(viewModel.stargazersCount) stars"
-        authorNameLabel.text = viewModel.login
-        if let avatarUrl = URL(string: viewModel.avatarUrl) {
-            authorImageView.sd_setImage(with: avatarUrl, placeholderImage: UIImage(named: "github_logo_placeholder"))
+        repositoryOwnerLabel.text = viewModel.login
+        repositoryStarsAmountLabel.text = "\(viewModel.stargazersCount)"
+        repositoryForksAmountLabel.text = "\(viewModel.forksCount)"
+        repositoryDescriptionLabel.text = viewModel.description
+        
+        if let photoUrl = URL(string: viewModel.avatarUrl) {
+            repositoryPhotoImageView.sd_setImage(with: photoUrl)
         }
     }
     
-    // MARK: - Private methods
+    func setupViews() {
+        addSubview(repositoryPhotoImageView)
+        addSubview(repositoryNameLabel)
+        addSubview(repositoryOwnerLabel)
+        addSubview(repositoryStarsImage)
+        addSubview(repositoryStarsAmountLabel)
+        addSubview(repositoryForksImage)
+        addSubview(repositoryForksAmountLabel)
+        addSubview(repositoryDescriptionLabel)
+    }
     
-    private func setupCell() {
-        let padding: CGFloat = 6
-        
-        authorImageView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(authorImageView)
-        NSLayoutConstraint.activate([
-            authorImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
-            authorImageView.topAnchor.constraint(equalTo: topAnchor, constant: 6),
-            authorImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
-            authorImageView.widthAnchor.constraint(equalToConstant: 90)
-            ])
-        
-        let stackView = UIStackView(arrangedSubviews: [repositoryNameLabel, starsLabel, authorNameLabel])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.backgroundColor = .blue
-        stackView.spacing = 2
-        stackView.distribution = .equalSpacing
-        addSubview(stackView)
+    func setupConstraints() {
+
         
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: authorImageView.trailingAnchor, constant: padding),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: padding),
-            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 6),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6)
+            repositoryPhotoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
+            repositoryPhotoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 6),
+            repositoryPhotoImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
+            repositoryPhotoImageView.widthAnchor.constraint(equalToConstant: 90)
+        ])
+        
+        NSLayoutConstraint.activate([repositoryNameLabel.topAnchor.constraint(equalTo: repositoryPhotoImageView.topAnchor, constant: 2),
+                                     repositoryNameLabel.leadingAnchor.constraint(equalTo: repositoryPhotoImageView.trailingAnchor, constant: 8),
+                                     repositoryNameLabel.trailingAnchor.constraint(equalTo: repositoryStarsAmountLabel.leadingAnchor, constant: 8),
+                                     repositoryNameLabel.heightAnchor.constraint(equalToConstant: 15)
+        ])
+        
+        NSLayoutConstraint.activate([repositoryStarsImage.topAnchor.constraint(equalTo: repositoryNameLabel.topAnchor, constant: 0),
+                                     repositoryStarsImage.leadingAnchor.constraint(equalTo: repositoryNameLabel.trailingAnchor, constant: 8),
+                                     repositoryStarsImage.trailingAnchor.constraint(equalTo: repositoryStarsAmountLabel.leadingAnchor, constant: 8),
+                                     repositoryStarsImage.bottomAnchor.constraint(equalTo: repositoryNameLabel.bottomAnchor),
+                                     repositoryStarsImage.widthAnchor.constraint(equalToConstant: 15),
+                                     repositoryStarsImage.heightAnchor.constraint(equalToConstant: 15)
+        ])
+        
+        NSLayoutConstraint.activate([repositoryStarsAmountLabel.topAnchor.constraint(equalTo: repositoryStarsImage.topAnchor),
+                                     repositoryStarsAmountLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+                                     repositoryStarsAmountLabel.widthAnchor.constraint(equalToConstant: 60)
+        ])
+        
+        NSLayoutConstraint.activate([repositoryOwnerLabel.topAnchor.constraint(equalTo: repositoryNameLabel.bottomAnchor, constant: 2),
+                                     repositoryOwnerLabel.leadingAnchor.constraint(equalTo: repositoryNameLabel.leadingAnchor),
+                                     repositoryOwnerLabel.trailingAnchor.constraint(equalTo: repositoryNameLabel.trailingAnchor),
+                                     repositoryOwnerLabel.heightAnchor.constraint(equalToConstant: 15)
+        ])
+        
+        NSLayoutConstraint.activate([repositoryForksImage.topAnchor.constraint(equalTo: repositoryOwnerLabel.topAnchor, constant: 0),
+                                     repositoryForksImage.leadingAnchor.constraint(equalTo: repositoryOwnerLabel.trailingAnchor, constant: 8),
+                                     repositoryForksImage.trailingAnchor.constraint(equalTo: repositoryStarsImage.trailingAnchor),
+                                     repositoryForksImage.widthAnchor.constraint(equalToConstant: 15),
+                                     repositoryForksImage.heightAnchor.constraint(equalToConstant: 15)
+        ])
+        
+        NSLayoutConstraint.activate([repositoryForksAmountLabel.topAnchor.constraint(equalTo: repositoryForksImage.topAnchor, constant: 0),
+                                     repositoryForksAmountLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+                                     repositoryForksAmountLabel.widthAnchor.constraint(equalToConstant: 60)
+        ])
+        
+        NSLayoutConstraint.activate([repositoryDescriptionLabel.topAnchor.constraint(equalTo: repositoryOwnerLabel.bottomAnchor, constant: 8),
+                                     repositoryDescriptionLabel.leadingAnchor.constraint(equalTo: repositoryPhotoImageView.trailingAnchor, constant: 8),
+                                     repositoryDescriptionLabel.trailingAnchor.constraint(equalTo: repositoryForksAmountLabel.trailingAnchor),
+                                     repositoryDescriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
         ])
         
     }
     
+    func setupConfigurations() {
+        selectionStyle = .none
+        backgroundColor = .clear
+    }
+    
 }
+
+
+

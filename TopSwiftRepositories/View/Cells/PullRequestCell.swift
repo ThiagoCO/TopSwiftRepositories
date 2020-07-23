@@ -22,7 +22,9 @@ class PullRequestCell: UITableViewCell {
     
     private lazy var pullRequestTitleLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 1
+        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.textColor = UIColor.black
+        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -30,14 +32,20 @@ class PullRequestCell: UITableViewCell {
     
     private lazy var descriptionPullRequestLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 2
+        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.textColor = UIColor.black
+        label.textAlignment = .justified
+        label.numberOfLines = 0
+        label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
-        return UILabel()
+        
+        return label
     }()
     
     private lazy var authorNameLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
+        label.font = UIFont(name: "Avenir Next", size: 13)
+        label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -76,6 +84,7 @@ class PullRequestCell: UITableViewCell {
         
         authorImageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(authorImageView)
+        
         NSLayoutConstraint.activate([
             authorImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             authorImageView.topAnchor.constraint(equalTo: topAnchor, constant: 6),
@@ -91,23 +100,26 @@ class PullRequestCell: UITableViewCell {
             pullRequestTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 6),
         ])
         
+        authorNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(authorNameLabel)
+        NSLayoutConstraint.activate([
+            authorNameLabel.topAnchor.constraint(equalTo: pullRequestTitleLabel.bottomAnchor, constant: 0),
+            authorNameLabel.leadingAnchor.constraint(equalTo: pullRequestTitleLabel.leadingAnchor),
+            authorNameLabel.trailingAnchor.constraint(equalTo: pullRequestTitleLabel.trailingAnchor),        
+        ])
+        
         descriptionPullRequestLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(descriptionPullRequestLabel)
         NSLayoutConstraint.activate([
             descriptionPullRequestLabel.leadingAnchor.constraint(equalTo: authorImageView.trailingAnchor, constant: padding),
             descriptionPullRequestLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            descriptionPullRequestLabel.topAnchor.constraint(equalTo: pullRequestTitleLabel.bottomAnchor, constant: 0)
+            descriptionPullRequestLabel.topAnchor.constraint(equalTo: authorNameLabel.bottomAnchor, constant: 0),
+            descriptionPullRequestLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
         ])
         
-        authorNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(authorNameLabel)
-        NSLayoutConstraint.activate([
-            authorNameLabel.topAnchor.constraint(equalTo: descriptionPullRequestLabel.bottomAnchor, constant: 10),
-            authorNameLabel.leadingAnchor.constraint(equalTo: descriptionPullRequestLabel.leadingAnchor),
-            authorNameLabel.trailingAnchor.constraint(equalTo: descriptionPullRequestLabel.trailingAnchor),
-            authorNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
-            
-        ])
+        
+        
+        
         
         
         

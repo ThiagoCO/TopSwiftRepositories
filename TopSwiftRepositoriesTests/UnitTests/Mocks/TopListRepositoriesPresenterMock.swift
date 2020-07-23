@@ -19,6 +19,7 @@ class TopListRepositoriesPresenterMock: TopListRepositoriesPresentationLogic {
     var presentPaginationLoadingCount = 0
     var hidePaginantionLoadingCount = 0
     var presentErrorCount = 0
+    var presentPullRequestCount = 0
     
     
     func presentListRepositories(repositories: [TopListRepositoriesModel.Repository]?) {
@@ -30,7 +31,7 @@ class TopListRepositoriesPresenterMock: TopListRepositoriesPresentationLogic {
     }
     
     func presentPullRequests() {
-          
+        presentPullRequestCount = presentPullRequestCount + 1
     }
     
     func hideScreenLoading() {

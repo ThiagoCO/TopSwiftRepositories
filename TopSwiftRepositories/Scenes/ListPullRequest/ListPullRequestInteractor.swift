@@ -47,7 +47,9 @@ class ListPullRequestInteractor: ListPullRequestBusinessLogic, ListPullRequestDa
     
     func handleSuccess(response: [ListPullRequest.PullRequest]) {
         let resp = ListPullRequest.Response(pullRequests: response)
-        presenter?.presentPullRequests(pullRequests: resp)
+        (resp.pullRequests.count == 0)
+            ? presenter?.presentError(title: "O repositorio " + (getRepositoryName() ?? ""), subtitle: "Não possui nenhum pull request aberto.")
+            : presenter?.presentPullRequests(pullRequests: resp)
     }
     
     func handleError(error: Error) {

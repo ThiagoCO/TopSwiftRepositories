@@ -99,6 +99,21 @@ class TopListRepositoriesInteractorTest: QuickSpec {
                         expect(mockPresenter.hideScreenLoadingCount).to(equal(3))
                         expect(mockPresenter.presentListRepositoriesCount).to(equal(3))
                     }
+                    
+                    it("returns the first page with 30 results and did select row") {
+                        mockWorker.resultType = .success
+                        sut.requestRepositories()
+                        sut.didSelectRow(index: 1)
+                        
+                        expect(sut.repositoryList?.repositories?.count).to(equal(30))
+                        expect(sut.nextPage).to(equal(2))
+                        expect(mockPresenter.presentScreenLoadingCount).to(equal(1))
+                        expect(mockPresenter.hidePaginantionLoadingCount).to(equal(1))
+                        expect(mockPresenter.hideScreenLoadingCount).to(equal(1))
+                        expect(mockPresenter.presentListRepositoriesCount).to(equal(1))
+                        expect(mockPresenter.presentPullRequestCount).to(equal(1))
+                        expect(sut.selectedItem).verify(sut.selectedItem != nil, FailureMessage(stringValue: "not selected item"))
+                    }
                 }
                 
                 context("request repositories error and show error message") {
