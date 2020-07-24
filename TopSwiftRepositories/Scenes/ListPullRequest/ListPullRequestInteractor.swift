@@ -26,10 +26,10 @@ protocol ListPullRequestDataStore {
 class ListPullRequestInteractor: ListPullRequestBusinessLogic, ListPullRequestDataStore {
     
     var presenter: ListPullRequestPresentationLogic?
-    var worker: ListPullRequestWorker
+    var worker: ListPullRequestNetworkLogic
     var selectedRepository: TopListRepositoriesModel.Repository?
 
-    init(worker: ListPullRequestWorker = ListPullRequestWorker()) {
+    init(worker: ListPullRequestNetworkLogic = ListPullRequestWorker()) {
         self.worker = worker
     }
     

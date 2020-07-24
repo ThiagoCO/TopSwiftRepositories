@@ -32,6 +32,13 @@ class StubManager {
             let result: TopListRepositoriesModel.Response? = JSONReaderHelper().read(filename: "repositories-stars-page-2")
             return HTTPStubsResponse(data: result.toData() ?? Data(), statusCode: 400, headers: nil).responseTime(delay)
         }
+        
+        stub(condition: isHost("api.github.com") && isPath("/repos/vsouza/awesome-ios/pulls")) { request -> HTTPStubsResponse in
+            let result: [ListPullRequest.PullRequest]? = JSONReaderHelper().read(filename: "pull-requests")
+            return HTTPStubsResponse(data: result.toData() ?? Data(), statusCode: 200, headers: nil).responseTime(delay)
+        }
+        
+        
     }
     
 }

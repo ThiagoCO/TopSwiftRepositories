@@ -16,7 +16,7 @@ protocol BaseDisplayLogic {
 extension BaseDisplayLogic where Self: UIViewController {
     
     func showError(title: String?, message: String?) {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) { [weak self] in
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             alertController.view.accessibilityIdentifier = "errorView"

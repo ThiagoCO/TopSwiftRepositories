@@ -15,11 +15,15 @@
 import Foundation
 import PromiseKit
 
-class ListPullRequestWorker {
+protocol ListPullRequestNetworkLogic {
+    func getPullsRequests(request: ListPullRequest.Request) -> Promise<[ListPullRequest.PullRequest]>
+}
+
+class ListPullRequestWorker: ListPullRequestNetworkLogic {
     
     let networkProvider = NetworkProvider.shared
 
-    func getPullsRequests(request: ListPullRequest.Request) -> Promise<[ListPullRequest.PullRequest]>{
+    func getPullsRequests(request: ListPullRequest.Request) -> Promise<[ListPullRequest.PullRequest]> {
         let requestProvider: ListPullRequestProvider = ListPullRequestProvider(request: request)
         return networkProvider.request(requestProvider, parseAs: [ListPullRequest.PullRequest].self)
     }

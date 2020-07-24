@@ -17,7 +17,7 @@ class TopListRepositoriesInteractorTest: QuickSpec {
     override func spec() {
         super.spec()
         
-        describe("ToListRepositoriesInteractorTest") {
+        describe("TopListRepositoriesInteractorTest") {
             var sut: TopListRepositoriesInteractor!
             var mockWorker: TopListRepositoriesWorkerMock!
             var mockPresenter: TopListRepositoriesPresenterMock!

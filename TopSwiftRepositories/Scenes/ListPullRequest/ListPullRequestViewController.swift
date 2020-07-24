@@ -40,6 +40,7 @@ class ListPullRequestViewController: BaseListRepositoriesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.accessibilityIdentifier = "tableViewPullRequest"
         interactor?.getPullRequest()
     }
     

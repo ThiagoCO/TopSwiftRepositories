@@ -60,6 +60,26 @@
                ReferencedContainer = "container:TopSwiftRepositories.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AB5523F624CA602900671A2A"
+               BuildableName = "TopSwiftRepositoriesUITest.xctest"
+               BlueprintName = "TopSwiftRepositoriesUITest"
+               ReferencedContainer = "container:TopSwiftRepositories.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AB58262D24CA685A00AF7675"
+               BuildableName = "TopSwiftRepositoriesFuncionalTests.xctest"
+               BlueprintName = "TopSwiftRepositoriesFuncionalTests"
+               ReferencedContainer = "container:TopSwiftRepositories.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
