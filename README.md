@@ -16,7 +16,7 @@ Print 2 - Listagem de pull requests de um repositorio.
 
 ## API
 - Lista de repositorios: https://api.github.com/search/repositories?q=language:Java&sort=stars&
-- Pull requests de um repositorio: https://api.github.com/repos/<NOME DO USUARIO>/<NOME DO REPOSITORIO>/pulls
+- Pull requests de um repositorio: https://api.github.com/repos/NOME DO USUARIO/NOME DO REPOSITORIO/pulls
 
 
 ## Ferramentas utilizadas
@@ -37,6 +37,13 @@ Print 2 - Listagem de pull requests de um repositorio.
 Neste projeto estou utilizando o Clean Swift.
 
 Mais informações: https://clean-swift.com/clean-swift-ios-architecture/
+
+## Features e diferenciais
+- Testes de caixa preta utlizando iOSSnapshotTestCase e o KIF
+- Pull refresh
+- Infinite scroll
+- Internacionalização
+- 100% Codeview
 
 ## Pods utilizados
 
@@ -66,9 +73,9 @@ Para testes unitários.
 1. Instale o CocoaPods caso não tenha instalado: https://cocoapods.org/
 2. Vá até a pasta do projeto pelo terminal (a pasta que tem o arquivo `Podfile`)
 3. Digite: `pod install`
-4. Pronto. Agora basta abrir o projeto no XCode pelo arquivo **`WirecardTest.xcworkspace`**
+4. Pronto. Agora basta abrir o projeto no XCode pelo arquivo **`TopSwiftRepositories.xcworkspace`**
 
-OBS: Não abra pelo **`WirecardTest.xcodeproj`** pois os pods não serão carregados e dará erro na hora de compilar.
+OBS: Não abra pelo **`TopSwiftRepositories.xcodeproj`** pois os pods não serão carregados e dará erro na hora de compilar.
 
 ## Instruçōes para compilação dos testes de caixa preta
 - Os testes de caixa preta foram configurados apenas no IPhone 11 Pro Max, ao executar os testes certifique-se que o simulador esteja nessa versão do iPhone.
