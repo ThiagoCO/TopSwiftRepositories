@@ -7,7 +7,7 @@ Aplicativo iOS que tem como objetivo acessar a API do github de repositorios da 
 
 ## Screenshots
 
-<img src="https://i.ibb.co/wBLvYxY/Captura-de-Tela-2019-04-03-a-s-17-33-24.png" height="400">             <img src="https://i.ibb.co/7CS1wJG/Captura-de-Tela-2019-04-03-a-s-17-34-12.png" height="400">        
+<img src="https://i.ibb.co/c3dVTQH/test-View-Controller-Flow-first-screen-3x.png" height="400">             <img src="https://i.ibb.co/ZKczJdF/test-View-Controller-Flow-pull-requests-screen-3x.png" height="400">        
 
 Print 1 - Listagem de repositorios. 
 
