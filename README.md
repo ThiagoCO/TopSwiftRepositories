@@ -1,4 +1,4 @@
-# TopSwiftRepositorie.
+# TopSwiftRepositories.
 
 Desenvolvido por Thiago Cavalcante de Oliveira.
 
@@ -70,4 +70,5 @@ Para testes unitários.
 
 OBS: Não abra pelo **`WirecardTest.xcodeproj`** pois os pods não serão carregados e dará erro na hora de compilar.
 
-
+## Instruçōes para compilação dos testes de caixa preta
+- Os testes de caixa preta foram configurados apenas no IPhone 11 Pro Max, ao executar os testes certifique-se que o simulador esteja nessa versão do iPhone.
