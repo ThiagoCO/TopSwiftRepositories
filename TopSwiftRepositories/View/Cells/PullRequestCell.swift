@@ -22,7 +22,7 @@ class PullRequestCell: UITableViewCell {
     
     private lazy var pullRequestTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
         label.textColor = UIColor.black
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -32,7 +32,7 @@ class PullRequestCell: UITableViewCell {
     
     private lazy var descriptionPullRequestLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
         label.textColor = UIColor.black
         label.textAlignment = .justified
         label.numberOfLines = 0
@@ -44,7 +44,7 @@ class PullRequestCell: UITableViewCell {
     
     private lazy var authorNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Avenir Next", size: 13)
+        label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 13)
         label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
         

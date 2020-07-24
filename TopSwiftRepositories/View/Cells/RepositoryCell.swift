@@ -37,7 +37,7 @@ class RepositoryCell: UITableViewCell {
     private lazy var repositoryNameLabel: UILabel = {
         let label = UILabel()
         
-        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
         label.textColor = UIColor.black
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +48,7 @@ class RepositoryCell: UITableViewCell {
     private lazy var repositoryOwnerLabel: UILabel = {
         let label = UILabel()
         
-        label.font = UIFont(name: "Avenir Next", size: 13)
+        label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 13)
         label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -68,7 +68,7 @@ class RepositoryCell: UITableViewCell {
     private lazy var repositoryStarsAmountLabel: UILabel = {
         let label = UILabel()
         
-        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
         label.textColor = UIColor.black
         label.textAlignment = .right
         label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
@@ -90,7 +90,7 @@ class RepositoryCell: UITableViewCell {
     private lazy var repositoryForksAmountLabel: UILabel = {
         let label = UILabel()
         
-        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
         label.textColor = UIColor.black
         label.textAlignment = .right
         label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
@@ -102,7 +102,7 @@ class RepositoryCell: UITableViewCell {
     private lazy var repositoryDescriptionLabel: UILabel = {
         let label = UILabel()
         
-        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
         label.textColor = UIColor.black
         label.textAlignment = .justified
         label.numberOfLines = 0

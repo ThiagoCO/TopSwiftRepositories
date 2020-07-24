@@ -39,7 +39,7 @@ class TopListRepositoriesViewControllerTest: FBSnapshotTestCase {
         tester().waitForAnimationsToFinish()
         let imageViewFirstScreen = getCurrentImageScreen()
         
-        FBSnapshotVerifyView(imageViewFirstScreen, identifier: "first_screen", overallTolerance: 0.1)
+        FBSnapshotVerifyView(imageViewFirstScreen, identifier: "first_screen", overallTolerance: 0.2)
         
         
         //validate infinity scroll layout
@@ -47,7 +47,7 @@ class TopListRepositoriesViewControllerTest: FBSnapshotTestCase {
         
         tester().waitForAnimationsToFinish()
         let imgFooter = getCurrentImageScreen()
-        FBSnapshotVerifyView(imgFooter, identifier: "infinity_loading",overallTolerance: 0.1)
+        FBSnapshotVerifyView(imgFooter, identifier: "infinity_loading",overallTolerance: 0.2)
     }
     
     func getCurrentImageScreen() -> UIImageView {
