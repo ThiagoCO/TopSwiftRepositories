@@ -55,4 +55,6 @@ class TopListRepositoriesViewControllerTest: FBSnapshotTestCase {
         let imageView = UIImageView(image: image.removeStatusBar())
         return imageView
     }
+    
+    
 }

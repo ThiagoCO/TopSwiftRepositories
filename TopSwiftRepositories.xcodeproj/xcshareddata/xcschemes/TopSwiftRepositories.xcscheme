@@ -61,7 +61,7 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AB5523F624CA602900671A2A"
@@ -71,10 +71,11 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AB58262D24CA685A00AF7675"
+               BlueprintIdentifier = "AB58263B24CA695800AF7675"
                BuildableName = "TopSwiftRepositoriesFuncionalTests.xctest"
                BlueprintName = "TopSwiftRepositoriesFuncionalTests"
                ReferencedContainer = "container:TopSwiftRepositories.xcodeproj">

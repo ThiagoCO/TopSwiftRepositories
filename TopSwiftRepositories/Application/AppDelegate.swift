@@ -15,8 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        StubManager.shared.stubRequests(withDelay: 1)
 
+        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+            StubManager.shared.stubRequests(withDelay: 1)
+        }
+        
         return true
     }
 

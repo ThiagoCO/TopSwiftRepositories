@@ -16,6 +16,10 @@ class ListPullRequestViewControllerTest: FBSnapshotTestCase {
         //recordMode = true
     }
     
+    override func tearDown() {
+        super.tearDown()
+    }
+    
     func testViewControllerFlow() {
         
         guard let tableView = tester().waitForView(withAccessibilityIdentifier: "tableView") as? UITableView else {
@@ -36,6 +40,9 @@ class ListPullRequestViewControllerTest: FBSnapshotTestCase {
             if let cell = tester().waitForCell(at: IndexPath(item: 0, section: 0), in: tableViewPullRequests) as? PullRequestCell {
                 FBSnapshotVerifyView(getCurrentImageScreen(), identifier: "pull_requests_screen", overallTolerance: 0.1)
                 FBSnapshotVerifyView(cell, identifier: "pull_request_cell")
+                
+                
+                
             }
             
         }
