@@ -80,3 +80,4 @@ OBS: Não abra pelo **`TopSwiftRepositories.xcodeproj`** pois os pods não serã
 
 ## Instruçōes para compilação dos testes de caixa preta
 - Os testes de caixa preta foram configurados apenas no IPhone 11 Pro Max, ao executar os testes certifique-se que o simulador esteja nessa versão do iPhone.
+- Para executar os testes de caixa preta e necessário compilar os testes no xcode 11.3, o aplicativo em si e compativel com o xcode 12.0 e 12.1 porém aparentemente o framework de snapshot não funciona muito bem nessas versōes. Acredito que futuramente sera corrigido pelo fornecedor do iOSSnapshotTestCase.
