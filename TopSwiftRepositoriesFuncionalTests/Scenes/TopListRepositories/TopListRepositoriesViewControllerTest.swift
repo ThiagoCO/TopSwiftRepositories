@@ -36,6 +36,7 @@ class TopListRepositoriesViewControllerTest: FBSnapshotTestCase {
         
         // validade first page
         tableView.contentOffset.y = 0
+
         tester().waitForAnimationsToFinish()
         let imageViewFirstScreen = getCurrentImageScreen()
         
