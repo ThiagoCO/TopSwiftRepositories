@@ -44,6 +44,7 @@ Mais informações: https://clean-swift.com/clean-swift-ios-architecture/
 - Infinite scroll
 - Internacionalização
 - 100% Codeview
+- App acessível para deficientes visuais  
 
 ## Pods utilizados
 
