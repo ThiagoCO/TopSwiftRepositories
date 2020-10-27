@@ -10,3 +10,11 @@
 "loading_title" = "Loading ...";
 "title_alert_error" = "OPS !!!";
 "subtitle_alert_error" = "Tivemos um problema. \nTente novamente mais tarde";
+
+
+"DOUBLE_TAP_TO_OPEN_PULL_REQUESTS" = "Toque duas vezes para abrir os pull requests";
+"PULL_REQUEST_DESCRIPTION" = "Item de Pull request. Título: %@. Descrição %@. %@";
+"PULL_REQUEST_TITLE" = "Pull requests %@";
+
+"REPOSITORIES_TITLE" = "Repositórios %@";
+"REPOSITORIES_DESCRIPTION" = "Repositório. Título: %@. descrição %@.";

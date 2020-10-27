@@ -46,6 +46,7 @@ class ListPullRequestViewController: BaseListRepositoriesViewController {
     
     override func setupNavigationBar() {
         title = "Pull Requests: " + (interactor?.getRepositoryName() ?? "")
+        title?.accessibilityLabel = String(format: .pullRequestTitle, interactor?.getRepositoryName() ?? "")
     }
 }
 
@@ -80,7 +81,9 @@ extension ListPullRequestViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = PullRequestCell()
-        cell.configure(viewModel: listPullRequestsViewModel[indexPath.row])
+        let viewModel = listPullRequestsViewModel[indexPath.row]
+        cell.configure(viewModel: viewModel)
+        cell.accessibilityLabel = String(format: .pullRequestDescription, viewModel.title, viewModel.user, viewModel.body ?? "")
         return cell
     }
     

@@ -13,4 +13,11 @@ extension String {
     static let loadingTitle = NSLocalizedString("loading_title", comment: "")
     static let titleAlertError = NSLocalizedString("title_alert_error", comment: "")
     static let subTitleAlertError = NSLocalizedString("subtitle_alert_error", comment: "")
+    
+    static let doubleTapToOpenPullRequests = NSLocalizedString("DOUBLE_TAP_TO_OPEN_PULL_REQUESTS", comment: "")
+    static let pullRequestDescription = NSLocalizedString("PULL_REQUEST_DESCRIPTION", comment: "")
+    static let pullRequestTitle = NSLocalizedString("PULL_REQUEST_TITLE", comment: "")
+    
+    static let repositoriesTitle = NSLocalizedString("REPOSITORIES_TITLE", comment: "")
+    static let repositoryDescription = NSLocalizedString("REPOSITORIES_DESCRIPTION", comment: "")
 }

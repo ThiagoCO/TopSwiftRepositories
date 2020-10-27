@@ -31,6 +31,8 @@ class TopListRepositoriesViewController: BaseListRepositoriesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.requestRepositories()
+        title?.accessibilityLabel = String(format: .repositoriesTitle, title ?? "")
+         view.isAccessibilityElement = true
     }
     
     override func loadView() {
@@ -107,7 +109,10 @@ extension TopListRepositoriesViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = RepositoryCell()
-        cell.configure(viewModel: repositoriesCellsViewModel[indexPath.row])
+        let viewModel = repositoriesCellsViewModel[indexPath.row]
+        cell.configure(viewModel:viewModel)
+        
+
         return cell
     }
     

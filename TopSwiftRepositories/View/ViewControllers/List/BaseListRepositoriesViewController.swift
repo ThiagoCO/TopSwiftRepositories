@@ -27,6 +27,7 @@ class BaseListRepositoriesViewController: UITableViewController, BaseDisplayLogi
     
     func setupNavigationBar() {
         title = String.topListRepositoriesTitle
+        title?.isAccessibilityElement = true
     }
 
 }

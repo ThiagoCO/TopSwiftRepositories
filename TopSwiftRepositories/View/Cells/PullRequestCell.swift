@@ -25,6 +25,7 @@ class PullRequestCell: UITableViewCell {
         label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
         label.textColor = UIColor.black
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        label.accessibilityHint = .pullRequestTitle
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -75,6 +76,7 @@ class PullRequestCell: UITableViewCell {
         if let avatarUrl = URL(string: viewModel.avatarUrl) {
             authorImageView.sd_setImage(with: avatarUrl, placeholderImage: UIImage(named: "github_logo_placeholder"))
         }
+       
     }
     
     // MARK: - Private methods

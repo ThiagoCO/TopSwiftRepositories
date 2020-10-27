@@ -25,8 +25,8 @@ class TopListRepositoriesViewControllerTest: FBSnapshotTestCase {
         }
         
         // validate layout first loading screen
-       
-            FBSnapshotVerifyView(imageViewLoadingScreen, identifier: "first_screen_loading", overallTolerance: 0.1)
+        
+        FBSnapshotVerifyView(imageViewLoadingScreen, identifier: "first_screen_loading", overallTolerance: 0.1)
         
         
         //validate layout repository cell
@@ -36,7 +36,7 @@ class TopListRepositoriesViewControllerTest: FBSnapshotTestCase {
         
         // validade first page
         tableView.contentOffset.y = 0
-
+        
         tester().waitForAnimationsToFinish()
         let imageViewFirstScreen = getCurrentImageScreen()
         

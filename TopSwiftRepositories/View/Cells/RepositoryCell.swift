@@ -132,6 +132,11 @@ class RepositoryCell: UITableViewCell {
         if let photoUrl = URL(string: viewModel.avatarUrl) {
             repositoryPhotoImageView.sd_setImage(with: photoUrl)
         }
+        
+        accessibilityLabel = String(format: .repositoryDescription,
+                                                viewModel.name,
+                                                viewModel.description)
+               accessibilityHint = .doubleTapToOpenPullRequests
     }
     
     func setupViews() {
